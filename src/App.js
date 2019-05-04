@@ -4,9 +4,15 @@ export default class App extends Component {
     constructor() {
         super();
         this.state = {
-            displayBio: true
+            displayBio: false
         };
+        this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
     }
+
+    toggleDisplayBio() {
+    	this.setState({ displayBio: !this.state.displayBio });
+    }
+
 
     render() {
 
@@ -20,8 +26,13 @@ export default class App extends Component {
 						<div>
 							<p>I live in Austin, and ride my bike everywhere I go.</p>
 							<p>My forte is the MERN stack, but I also love Vue</p>
+							<button onClick={this.toggleDisplayBio}>Show less</button>
 						</div>
-					) : null
+					) : (
+						<div>
+							<button onClick={this.toggleDisplayBio}>Read more</button>
+						</div>
+					)
 				}
 			</div>
         )
