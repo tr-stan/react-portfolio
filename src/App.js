@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 
 export default class App extends Component {
-    constructor() {
-        super();
-        this.state = {
-            displayBio: false
-        };
-        this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
-    }
+	state = { displayBio: false };
 
-    toggleDisplayBio() {
+    toggleDisplayBio = () => {
     	this.setState({ displayBio: !this.state.displayBio });
     }
-
 
     render() {
 
