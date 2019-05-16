@@ -5,9 +5,9 @@ class Project extends Component {
 	render() {
 		const { title, image, description, link, id } = this.props.project
 		return (
-			<div style={{display: 'inline-block', width: 300, margin: 10}}>
+			<div class='project'>
 			<h3>{title}</h3>
-			<img src={image} alt={`portfolio ${id} image`} style={{width: 200, height: 200}}/>
+			<img src={image} alt={`portfolio ${id}`} style={{'max-width': '24vw', 'height': 'auto'}}/>
 			<p>{description}</p>
 			<a href={link}>{link}</a>
 			</div>
@@ -18,9 +18,9 @@ class Project extends Component {
 export default class Projects extends Component {
 	render() {
 		return (
-			<div>
+			<section>
 				<h2>Highlighted Projects</h2>
-				<div>
+				
 				{
 					PROJECTS.map(PROJECT => {
 						return (
@@ -28,8 +28,8 @@ export default class Projects extends Component {
 						)
 					})
 				}
-				</div>
-			</div>
+				
+			</section>
 		)
 	}
 }
