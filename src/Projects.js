@@ -5,7 +5,7 @@ class Project extends Component {
 	render() {
 		const { title, image, description, link, id } = this.props.project
 		return (
-			<div class='project'>
+			<div className='project'>
 			<h3>{title}</h3>
 			<img src={image} alt={`portfolio ${id}`} style={{'max-width': '24vw', 'height': 'auto'}}/>
 			<p>{description}</p>
