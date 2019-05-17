@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Projects from './Projects';
 import SocialProfiles from './SocialProfiles';
 import Selfie from './assets/br-selfie.jpeg';
+import Title from './Title';
 import './index.css'
 
 export default class App extends Component {
@@ -16,7 +17,7 @@ export default class App extends Component {
         return (
             <div>
             	<img id='selfie' alt='profile' src={Selfie}/>
-				<h1>Hiya!</h1>
+				<Title />
 				<p>My name is Tristan.</p>
 				<p>I'm a multicultural full stack software engineer, polyglot, and ideator, always ready to learn something new!</p>
 				{
