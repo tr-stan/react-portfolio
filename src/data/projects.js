@@ -1,6 +1,6 @@
-import spectrofy from '../assets/spectrofy.gif'
-import mazerLazer from '../assets/mazer-lazer.gif'
-import localForecast from '../assets/local-forecast.png'
+import spectrofy from '../assets/spectrofy-4.png'
+import mazerLazer from '../assets/mazer-lazer.png'
+import localForecast from '../assets/local-weather.png'
 import allGreek from '../assets/all-greek.png'
 
 // use 'screencase' syntax for global variables

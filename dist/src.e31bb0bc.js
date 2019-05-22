@@ -24020,12 +24020,12 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"assets/spectrofy.gif":[function(require,module,exports) {
-module.exports = "/spectrofy.97fc9e18.gif";
-},{}],"assets/mazer-lazer.gif":[function(require,module,exports) {
-module.exports = "/mazer-lazer.6fc0dff8.gif";
-},{}],"assets/local-forecast.png":[function(require,module,exports) {
-module.exports = "/local-forecast.14c7eba5.png";
+},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"assets/spectrofy-4.png":[function(require,module,exports) {
+module.exports = "/spectrofy-4.c9188e0a.png";
+},{}],"assets/mazer-lazer.png":[function(require,module,exports) {
+module.exports = "/mazer-lazer.2222f601.png";
+},{}],"assets/local-weather.png":[function(require,module,exports) {
+module.exports = "/local-weather.8864402f.png";
 },{}],"assets/all-greek.png":[function(require,module,exports) {
 module.exports = "/all-greek.3831c3e0.png";
 },{}],"data/projects.js":[function(require,module,exports) {
@@ -24036,11 +24036,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _spectrofy = _interopRequireDefault(require("../assets/spectrofy.gif"));
+var _spectrofy = _interopRequireDefault(require("../assets/spectrofy-4.png"));
 
-var _mazerLazer = _interopRequireDefault(require("../assets/mazer-lazer.gif"));
+var _mazerLazer = _interopRequireDefault(require("../assets/mazer-lazer.png"));
 
-var _localForecast = _interopRequireDefault(require("../assets/local-forecast.png"));
+var _localWeather = _interopRequireDefault(require("../assets/local-weather.png"));
 
 var _allGreek = _interopRequireDefault(require("../assets/all-greek.png"));
 
@@ -24064,7 +24064,7 @@ var PROJECTS = [{
   title: "Local Weather App",
   description: "A simple local weather app that displays local weather conditions in Fahrenheit or Celsius using JSON data from the openweathermap API.",
   link: "https://mazer-lazer.herokuapp.com",
-  image: _localForecast.default
+  image: _localWeather.default
 }, {
   id: 4,
   title: "Random Generator - It's All Greek to Me",
@@ -24074,7 +24074,7 @@ var PROJECTS = [{
 }];
 var _default = PROJECTS;
 exports.default = _default;
-},{"../assets/spectrofy.gif":"assets/spectrofy.gif","../assets/mazer-lazer.gif":"assets/mazer-lazer.gif","../assets/local-forecast.png":"assets/local-forecast.png","../assets/all-greek.png":"assets/all-greek.png"}],"Projects.js":[function(require,module,exports) {
+},{"../assets/spectrofy-4.png":"assets/spectrofy-4.png","../assets/mazer-lazer.png":"assets/mazer-lazer.png","../assets/local-weather.png":"assets/local-weather.png","../assets/all-greek.png":"assets/all-greek.png"}],"Projects.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24130,16 +24130,12 @@ function (_Component) {
           id = _this$props$project.id;
       return _react.default.createElement("div", {
         className: "project"
-      }, _react.default.createElement("h3", null, title), _react.default.createElement("img", {
-        src: image,
-        alt: "portfolio ".concat(id),
-        style: {
-          'maxWidth': '24vw',
-          'height': 'auto'
-        }
-      }), _react.default.createElement("p", null, description), _react.default.createElement("a", {
+      }, _react.default.createElement("h3", null, title), _react.default.createElement("a", {
         href: link
-      }, link));
+      }, _react.default.createElement("img", {
+        src: image,
+        alt: "portfolio project ".concat(id)
+      })), _react.default.createElement("p", null, description));
     }
   }]);
 
@@ -24271,6 +24267,7 @@ function (_Component) {
           link = _this$props$socialPro.link,
           image = _this$props$socialPro.image;
       return _react.default.createElement("div", {
+        key: id,
         style: {
           display: 'inline-block'
         }
@@ -24306,7 +24303,7 @@ function (_Component2) {
     value: function render() {
       return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Connect With Me!"), _socialProfiles.default.map(function (SOCIAL_PROFILE) {
         return _react.default.createElement(SocialProfile, {
-          key: SOCIAL_PROFILE.ID,
+          key: SOCIAL_PROFILE.id,
           socialProfile: SOCIAL_PROFILE
         });
       }));
@@ -24372,16 +24369,24 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Title)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_this), "state", {
-      titleIndex: 0
+      titleIndex: 0,
+      fadeIn: true
     });
 
     _defineProperty(_assertThisInitialized(_this), "animateTitles", function () {
-      setInterval(function () {
+      _this.titleInterval = setInterval(function () {
         var titleIndex = (_this.state.titleIndex + 1) % TITLES.length;
 
         _this.setState({
-          titleIndex: titleIndex
+          titleIndex: titleIndex,
+          fadeIn: true
         });
+
+        _this.timeout = setTimeout(function () {
+          return _this.setState({
+            fadeIn: false
+          });
+        }, 2000);
       }, 4000);
     });
 
@@ -24391,14 +24396,33 @@ function (_Component) {
   _createClass(Title, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      console.log('Title component has mounted.');
+      var _this2 = this;
+
+      this.timeout = setTimeout(function () {
+        return _this2.setState({
+          fadeIn: false
+        });
+      }, 2000);
       this.animateTitles();
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      // clearing interval and timeout to makesure we don't call
+      // setState on an unmounted timeout or interval
+      clearInterval(this.titleInterval);
+      clearTimeout(this.timeout);
     }
   }, {
     key: "render",
     value: function render() {
-      var title = TITLES[this.state.titleIndex];
-      return _react.default.createElement("h1", null, title);
+      var _this$state = this.state,
+          titleIndex = _this$state.titleIndex,
+          fadeIn = _this$state.fadeIn;
+      var title = TITLES[titleIndex];
+      return _react.default.createElement("h1", {
+        className: fadeIn ? 'title-fade-in' : 'title-fade-out'
+      }, title);
     }
   }]);
 
@@ -24612,7 +24636,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54232" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55996" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

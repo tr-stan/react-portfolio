@@ -7,9 +7,10 @@ class Project extends Component {
 		return (
 			<div className='project'>
 			<h3>{title}</h3>
-			<img src={image} alt={`portfolio ${id}`} style={{'maxWidth': '24vw', 'height': 'auto'}}/>
+			<a href={link}>
+			<img src={image} alt={`portfolio project ${id}`}/>
+			</a>
 			<p>{description}</p>
-			<a href={link}>{link}</a>
 			</div>
 		)
 	}
