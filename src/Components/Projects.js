@@ -14,21 +14,14 @@ const Project = props => {
 		)
 }
 
-export default class Projects extends Component {
-	render() {
-		return (
-			<section>
-				<h2>Highlighted Projects</h2>
-				
-				{
-					PROJECTS.map(PROJECT => {
-						return (
-							<Project key={PROJECT.id} project={PROJECT} />
-						)
-					})
-				}
-				
-			</section>
-		)
-	}
-}
+const Projects = () => (
+	<section>
+		<h2>Highlighted Projects</h2>
+		
+		{
+			PROJECTS.map(PROJECT => (<Project key={PROJECT.id} project={PROJECT} />))
+		}
+	</section>
+)
+
+export default Projects
