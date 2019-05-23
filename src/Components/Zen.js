@@ -12,6 +12,9 @@ export default class Zen extends Component {
 					this.setState({ zenSaying: string });
 				})
 			})
+			.catch(error => {
+				console.log("There was an error reading the GitHub zen quote", error);
+			})
 	}
 
 	render() {
