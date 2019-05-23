@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import PROJECTS from '../data/projects'
 
-class Project extends Component {
-	render() {
-		const { title, image, description, link, id } = this.props.project
+const Project = props => {
+	const { title, image, description, link, id } = props.project
 		return (
 			<div className='project'>
 			<h3>{title}</h3>
@@ -13,7 +12,6 @@ class Project extends Component {
 			<p>{description}</p>
 			</div>
 		)
-	}
 }
 
 export default class Projects extends Component {

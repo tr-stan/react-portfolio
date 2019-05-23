@@ -24108,44 +24108,27 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var Project =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Project, _Component);
-
-  function Project() {
-    _classCallCheck(this, Project);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Project).apply(this, arguments));
-  }
-
-  _createClass(Project, [{
-    key: "render",
-    value: function render() {
-      var _this$props$project = this.props.project,
-          title = _this$props$project.title,
-          image = _this$props$project.image,
-          description = _this$props$project.description,
-          link = _this$props$project.link,
-          id = _this$props$project.id;
-      return _react.default.createElement("div", {
-        className: "project"
-      }, _react.default.createElement("h3", null, title), _react.default.createElement("a", {
-        href: link
-      }, _react.default.createElement("img", {
-        src: image,
-        alt: "portfolio project ".concat(id)
-      })), _react.default.createElement("p", null, description));
-    }
-  }]);
-
-  return Project;
-}(_react.Component);
+var Project = function Project(props) {
+  var _props$project = props.project,
+      title = _props$project.title,
+      image = _props$project.image,
+      description = _props$project.description,
+      link = _props$project.link,
+      id = _props$project.id;
+  return _react.default.createElement("div", {
+    className: "project"
+  }, _react.default.createElement("h3", null, title), _react.default.createElement("a", {
+    href: link
+  }, _react.default.createElement("img", {
+    src: image,
+    alt: "portfolio project ".concat(id)
+  })), _react.default.createElement("p", null, description));
+};
 
 var Projects =
 /*#__PURE__*/
-function (_Component2) {
-  _inherits(Projects, _Component2);
+function (_Component) {
+  _inherits(Projects, _Component);
 
   function Projects() {
     _classCallCheck(this, Projects);
@@ -24722,7 +24705,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56474" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50077" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
