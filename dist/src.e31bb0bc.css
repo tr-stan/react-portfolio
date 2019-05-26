@@ -6,6 +6,8 @@ body {
 	font-family: 'Roboto Mono', Arial, sans-serif;
 	font-size: 20px;
 	padding: 5vh 5vw;
+	background-color: rgb(200,194,204);
+	color: rgb(56, 54, 55);
 }
 
 img {
@@ -41,8 +43,33 @@ img {
 	to { opacity: 1 }
 }
 
+.dark {
+	background-color: rgb(56, 54, 55);
+	color: rgb(200,194,204);
+}
+
+#mode {
+	position: sticky;
+	display: block;
+	top: 2vh;
+	margin-left: 0;
+	width: 55px;
+	background-color: rgba(200,194,204, 0.8);
+	color: rgb(56,54,55);
+	font-family: inherit;
+	padding: 10px;
+	border-color: rgb(56,54,55);
+}
+
+#mode:hover {
+	cursor: pointer;
+}
+
 #selfie {
+	min-height: 300px;
 	max-height: 40vh;
+	max-width: 90vw;
+	height:  auto;
 	width: auto;
 	border-radius: 220px;
 }

@@ -24212,8 +24212,8 @@ var SocialProfiles = function SocialProfiles() {
 
 var _default = SocialProfiles;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../data/socialProfiles":"data/socialProfiles.js"}],"assets/br-selfie.jpeg":[function(require,module,exports) {
-module.exports = "/br-selfie.4f1337ab.jpeg";
+},{"react":"../node_modules/react/index.js","../data/socialProfiles":"data/socialProfiles.js"}],"assets/tri-be_logo.png":[function(require,module,exports) {
+module.exports = "/tri-be_logo.db2c8b15.png";
 },{}],"Components/Title.js":[function(require,module,exports) {
 "use strict";
 
@@ -24400,6 +24400,8 @@ function (_Component) {
             zenSaying: string
           });
         });
+      }).catch(function (error) {
+        console.log("There was an error reading the GitHub zen quote", error);
       });
     }
   }, {
@@ -24499,7 +24501,7 @@ var _Projects = _interopRequireDefault(require("./Projects"));
 
 var _SocialProfiles = _interopRequireDefault(require("./SocialProfiles"));
 
-var _brSelfie = _interopRequireDefault(require("../assets/br-selfie.jpeg"));
+var _triBe_logo = _interopRequireDefault(require("../assets/tri-be_logo.png"));
 
 var _Title = _interopRequireDefault(require("./Title"));
 
@@ -24550,13 +24552,17 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(App)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_this), "state", {
-      displayBio: false
+      displayBio: false,
+      darkMode: true,
+      mode: 'dark'
     });
 
-    _defineProperty(_assertThisInitialized(_this), "toggleDisplayBio", function () {
+    _defineProperty(_assertThisInitialized(_this), "toggleMode", function () {
       _this.setState({
-        displayBio: !_this.state.displayBio
+        darkMode: !_this.state.darkMode
       });
+
+      _this.state.darkMode ? document.body.classList.add('dark') : document.body.classList.remove('dark');
     });
 
     return _this;
@@ -24565,15 +24571,14 @@ function (_Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, _react.default.createElement("img", {
+      return _react.default.createElement("div", null, _react.default.createElement("button", {
+        id: "mode",
+        onClick: this.toggleMode
+      }, this.state.darkMode ? 'Dark' : 'Light', " Mode"), _react.default.createElement("img", {
         id: "selfie",
         alt: "profile",
-        src: _brSelfie.default
-      }), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "My name is Tristan."), _react.default.createElement("p", null, "I'm a multicultural full stack software engineer, polyglot, and ideator, always ready to learn something new!"), this.state.displayBio ? _react.default.createElement("div", null, _react.default.createElement("p", null, "I live in Austin, and ride my bike everywhere I go."), _react.default.createElement("p", null, "My forte is the MERN stack, but I also love Vue"), _react.default.createElement("button", {
-        onClick: this.toggleDisplayBio
-      }, "Show less")) : _react.default.createElement("div", null, _react.default.createElement("button", {
-        onClick: this.toggleDisplayBio
-      }, "Read more")), _react.default.createElement(_Projects.default, null), _react.default.createElement(_SocialProfiles.default, null), _react.default.createElement(_Zen.default, null));
+        src: _triBe_logo.default
+      }), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "My name is Tristan."), _react.default.createElement("p", null, "I'm a multicultural full stack software engineer, polyglot, and ideator, always ready to learn something new!"), _react.default.createElement("p", null, "I live in Austin, and ride my bike everywhere I go."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!"), _react.default.createElement(_Projects.default, null), _react.default.createElement(_SocialProfiles.default, null), _react.default.createElement(_Zen.default, null));
     }
   }]);
 
@@ -24581,7 +24586,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"../node_modules/react/index.js","./Projects":"Components/Projects.js","./SocialProfiles":"Components/SocialProfiles.js","../assets/br-selfie.jpeg":"assets/br-selfie.jpeg","./Title":"Components/Title.js","./Zen":"Components/Zen.js","../index.css":"index.css"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./Projects":"Components/Projects.js","./SocialProfiles":"Components/SocialProfiles.js","../assets/tri-be_logo.png":"assets/tri-be_logo.png","./Title":"Components/Title.js","./Zen":"Components/Zen.js","../index.css":"index.css"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -24620,7 +24625,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51557" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63320" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
