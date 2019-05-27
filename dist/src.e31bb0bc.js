@@ -24329,7 +24329,84 @@ function (_Component) {
 
 var _default = Title;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"Components/Zen.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js"}],"Components/ToolTip.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var ToolTip =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(ToolTip, _Component);
+
+  function ToolTip() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, ToolTip);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ToolTip)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {});
+
+    return _this;
+  }
+
+  _createClass(ToolTip, [{
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("div", {
+        className: "tooltip"
+      }, _react.default.createElement("div", {
+        className: "tooltip-arrow"
+      }), _react.default.createElement("div", {
+        className: "tooltip-content"
+      }, this.props.mode));
+    }
+  }]);
+
+  return ToolTip;
+}(_react.Component);
+
+var _default = ToolTip;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"assets/moon.png":[function(require,module,exports) {
+module.exports = "/moon.bdc28cbf.png";
+},{}],"assets/sun.png":[function(require,module,exports) {
+module.exports = "/sun.8377c53e.png";
+},{}],"Components/Zen.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24505,6 +24582,12 @@ var _triBe_logo = _interopRequireDefault(require("../assets/tri-be_logo.png"));
 
 var _Title = _interopRequireDefault(require("./Title"));
 
+var _ToolTip = _interopRequireDefault(require("./ToolTip"));
+
+var _moon = _interopRequireDefault(require("../assets/moon.png"));
+
+var _sun = _interopRequireDefault(require("../assets/sun.png"));
+
 var _Zen = _interopRequireDefault(require("./Zen"));
 
 require("../index.css");
@@ -24554,7 +24637,7 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "state", {
       displayBio: false,
       darkMode: true,
-      mode: 'dark'
+      mode: 'Dark Mode'
     });
 
     _defineProperty(_assertThisInitialized(_this), "toggleMode", function () {
@@ -24571,11 +24654,21 @@ function (_Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, _react.default.createElement("button", {
+      var modeImage = this.state.darkMode ? _moon.default : _sun.default;
+      var altText = this.state.darkMode ? 'Dark Mode' : 'Light Mode';
+      return _react.default.createElement("div", {
+        id: "app"
+      }, _react.default.createElement("button", {
         id: "mode",
         onClick: this.toggleMode
-      }, this.state.darkMode ? 'Dark' : 'Light', " Mode"), _react.default.createElement("img", {
-        id: "selfie",
+      }, _react.default.createElement("img", {
+        id: "mode-img",
+        src: modeImage,
+        alt: altText
+      })), _react.default.createElement(_ToolTip.default, {
+        mode: altText
+      }), _react.default.createElement("img", {
+        id: "profile",
         alt: "profile",
         src: _triBe_logo.default
       }), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "My name is Tristan."), _react.default.createElement("p", null, "I'm a multicultural full stack software engineer, polyglot, and ideator, always ready to learn something new!"), _react.default.createElement("p", null, "I live in Austin, and ride my bike everywhere I go."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!"), _react.default.createElement(_Projects.default, null), _react.default.createElement(_SocialProfiles.default, null), _react.default.createElement(_Zen.default, null));
@@ -24586,7 +24679,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"../node_modules/react/index.js","./Projects":"Components/Projects.js","./SocialProfiles":"Components/SocialProfiles.js","../assets/tri-be_logo.png":"assets/tri-be_logo.png","./Title":"Components/Title.js","./Zen":"Components/Zen.js","../index.css":"index.css"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./Projects":"Components/Projects.js","./SocialProfiles":"Components/SocialProfiles.js","../assets/tri-be_logo.png":"assets/tri-be_logo.png","./Title":"Components/Title.js","./ToolTip":"Components/ToolTip.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","./Zen":"Components/Zen.js","../index.css":"index.css"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -24625,7 +24718,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63320" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54884" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

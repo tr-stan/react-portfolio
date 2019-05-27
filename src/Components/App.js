@@ -3,12 +3,15 @@ import Projects from './Projects';
 import SocialProfiles from './SocialProfiles';
 import Profile from '../assets/tri-be_logo.png';
 import Title from './Title';
+import ToolTip from './ToolTip';
+import Moon from '../assets/moon.png';
+import Sun from '../assets/sun.png';
 import Zen from './Zen';
 import '../index.css'
 
 
 export default class App extends Component {
-	state = { displayBio: false, darkMode: true, mode: 'dark' };
+	state = { displayBio: false, darkMode: true, mode: 'Dark Mode' };
 
     toggleMode = () => {
     	this.setState({
@@ -18,11 +21,15 @@ export default class App extends Component {
     }
 
     render() {
-
+        let modeImage = this.state.darkMode ? Moon : Sun;
+        let altText = this.state.darkMode ? 'Dark Mode' : 'Light Mode';
         return (
-            <div>
-            	<button id="mode" onClick={this.toggleMode}>{this.state.darkMode ? 'Dark' : 'Light'} Mode</button>
-            	<img id='selfie' alt='profile' src={Profile}/>
+            <div id="app">
+            	<button id="mode" onClick={this.toggleMode}>
+                    <img id="mode-img" src={modeImage} alt={altText}/>
+                </button>
+            	<ToolTip mode={altText} />
+                <img id='profile' alt='profile' src={Profile}/>
 				<Title />
 				<p>My name is Tristan.</p>
 				<p>I'm a multicultural full stack software engineer, polyglot, and ideator, always ready to learn something new!</p>
