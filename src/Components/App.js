@@ -38,7 +38,7 @@ export default class App extends Component {
 				<p>My forte is the MERN stack, but I enjoy Python, Vue, and SQL!</p>
 				<Projects />
                 <Skills />
-				<SocialProfiles />
+				<SocialProfiles mode={this.state.darkMode}/>
 				<Zen />
 			</div>
         )

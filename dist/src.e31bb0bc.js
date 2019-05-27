@@ -24163,7 +24163,52 @@ var SOCIAL_PROFILES = [{
 }];
 var _default = SOCIAL_PROFILES;
 exports.default = _default;
-},{"../assets/envelope.png":"assets/envelope.png","../assets/github.png":"assets/github.png","../assets/instagram.png":"assets/instagram.png","../assets/linkedin.png":"assets/linkedin.png"}],"Components/SocialProfiles.js":[function(require,module,exports) {
+},{"../assets/envelope.png":"assets/envelope.png","../assets/github.png":"assets/github.png","../assets/instagram.png":"assets/instagram.png","../assets/linkedin.png":"assets/linkedin.png"}],"assets/mail-light-md.png":[function(require,module,exports) {
+module.exports = "/mail-light-md.0d415013.png";
+},{}],"assets/github-light-md.png":[function(require,module,exports) {
+module.exports = "/github-light-md.6fdad683.png";
+},{}],"assets/instagram-light-md.png":[function(require,module,exports) {
+module.exports = "/instagram-light-md.f7101625.png";
+},{}],"assets/linkedin-light-md.png":[function(require,module,exports) {
+module.exports = "/linkedin-light-md.5475bbde.png";
+},{}],"data/socialProfilesLight.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _mailLightMd = _interopRequireDefault(require("../assets/mail-light-md.png"));
+
+var _githubLightMd = _interopRequireDefault(require("../assets/github-light-md.png"));
+
+var _instagramLightMd = _interopRequireDefault(require("../assets/instagram-light-md.png"));
+
+var _linkedinLightMd = _interopRequireDefault(require("../assets/linkedin-light-md.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SOCIAL_PROFILES_LIGHT = [{
+  id: 1,
+  link: 'mailto:betriistan@gmail.com',
+  image: _mailLightMd.default
+}, {
+  id: 2,
+  link: 'https://github.com/tri-be',
+  image: _githubLightMd.default
+}, {
+  id: 3,
+  link: 'https://www.instagram.com/tri__be/?hl=en',
+  image: _instagramLightMd.default
+}, {
+  id: 4,
+  link: 'https://www.linkedin.com/in/tristanbennett1',
+  image: _linkedinLightMd.default
+}];
+var _default = SOCIAL_PROFILES_LIGHT;
+exports.default = _default;
+},{"../assets/mail-light-md.png":"assets/mail-light-md.png","../assets/github-light-md.png":"assets/github-light-md.png","../assets/instagram-light-md.png":"assets/instagram-light-md.png","../assets/linkedin-light-md.png":"assets/linkedin-light-md.png"}],"Components/SocialProfiles.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24174,6 +24219,8 @@ exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
 
 var _socialProfiles = _interopRequireDefault(require("../data/socialProfiles"));
+
+var _socialProfilesLight = _interopRequireDefault(require("../data/socialProfilesLight"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24201,8 +24248,9 @@ var SocialProfile = function SocialProfile(props) {
   })));
 };
 
-var SocialProfiles = function SocialProfiles() {
-  return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Connect With Me!"), _socialProfiles.default.map(function (SOCIAL_PROFILE) {
+var SocialProfiles = function SocialProfiles(props) {
+  var profiles = props.mode ? _socialProfiles.default : _socialProfilesLight.default;
+  return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Connect With Me!"), profiles.map(function (SOCIAL_PROFILE) {
     return _react.default.createElement(SocialProfile, {
       key: SOCIAL_PROFILE.id,
       socialProfile: SOCIAL_PROFILE
@@ -24212,7 +24260,7 @@ var SocialProfiles = function SocialProfiles() {
 
 var _default = SocialProfiles;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../data/socialProfiles":"data/socialProfiles.js"}],"data/skills.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../data/socialProfiles":"data/socialProfiles.js","../data/socialProfilesLight":"data/socialProfilesLight.js"}],"data/skills.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24810,7 +24858,9 @@ function (_Component) {
         id: "profile",
         alt: "profile",
         src: _triBe_logo.default
-      }), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "My name is Tristan."), _react.default.createElement("p", null, "I'm a multicultural full stack software engineer, polyglot, and ideator, always ready to learn something new!"), _react.default.createElement("p", null, "I live in Austin, and ride my bike everywhere I go."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!"), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_SocialProfiles.default, null), _react.default.createElement(_Zen.default, null));
+      }), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "My name is Tristan."), _react.default.createElement("p", null, "I'm a multicultural full stack software engineer, polyglot, and ideator, always ready to learn something new!"), _react.default.createElement("p", null, "I live in Austin, and ride my bike everywhere I go."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!"), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_SocialProfiles.default, {
+        mode: this.state.darkMode
+      }), _react.default.createElement(_Zen.default, null));
     }
   }]);
 
@@ -24857,7 +24907,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63722" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57211" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
