@@ -34,6 +34,15 @@ img {
 	animation-duration: 2s;
 }
 
+.skillset {
+	display: inline-block;
+	width: 30vw;
+}
+
+.skillset ul {
+	list-style-type: none;
+}
+
 .dark {
 	background-color: rgba(50, 50, 50, 1);
 	color: rgb(200,194,204);
@@ -44,7 +53,7 @@ img {
 	top: 6vh;
 	width: 50px;
 	margin-top: 5px;
-	margin-left: -55px;
+	margin-left: -3vw;
 	display: block;
 	font-size: 8px;
 }
@@ -87,7 +96,7 @@ img {
 }
 
 .project img {
-	box-shadow: 0 0 8px 0 rgba(40, 40, 40, 1);
+	/* box-shadow: 0 0 8px 0 rgba(40, 40, 40, 1); */
 }
 
 @keyframes fade-out {

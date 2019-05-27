@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Projects from './Projects';
 import SocialProfiles from './SocialProfiles';
+import Skills from './Skills';
 import Profile from '../assets/tri-be_logo.png';
 import Title from './Title';
 import ToolTip from './ToolTip';
@@ -36,6 +37,7 @@ export default class App extends Component {
 				<p>I live in Austin, and ride my bike everywhere I go.</p>
 				<p>My forte is the MERN stack, but I enjoy Python, Vue, and SQL!</p>
 				<Projects />
+                <Skills />
 				<SocialProfiles />
 				<Zen />
 			</div>

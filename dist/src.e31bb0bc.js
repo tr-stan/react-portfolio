@@ -24212,7 +24212,144 @@ var SocialProfiles = function SocialProfiles() {
 
 var _default = SocialProfiles;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../data/socialProfiles":"data/socialProfiles.js"}],"assets/tri-be_logo.png":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../data/socialProfiles":"data/socialProfiles.js"}],"data/skills.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var SKILLS = {
+  "frontend": [{
+    id: 1,
+    category: "front-end",
+    name: "ES6"
+  }, {
+    id: 2,
+    category: "front-end",
+    name: "React"
+  }, {
+    id: 3,
+    category: "front-end",
+    name: "jQuery"
+  }, {
+    id: 4,
+    category: "front-end",
+    name: "Vue"
+  }, {
+    id: 5,
+    category: "front-end",
+    name: "HTML / 5"
+  }, {
+    id: 6,
+    category: "front-end",
+    name: "CSS / 3"
+  }],
+  "backend": [{
+    id: 1,
+    category: "back-end",
+    name: "Node"
+  }, {
+    id: 2,
+    category: "back-end",
+    name: "Express"
+  }, {
+    id: 3,
+    category: "back-end",
+    name: "Python"
+  }, {
+    id: 4,
+    category: "back-end",
+    name: "Postgre SQL"
+  }, {
+    id: 5,
+    category: "back-end",
+    name: "MongoDB"
+  }, {
+    id: 6,
+    category: "back-end",
+    name: "Firebase"
+  }],
+  "misc": [{
+    id: 1,
+    category: "misc",
+    name: "REST"
+  }, {
+    id: 2,
+    category: "misc",
+    name: "APIs"
+  }, {
+    id: 3,
+    category: "misc",
+    name: "MVC"
+  }, {
+    id: 4,
+    category: "misc",
+    name: "Git"
+  }, {
+    id: 5,
+    category: "misc",
+    name: "Bash"
+  }, {
+    id: 6,
+    category: "misc",
+    name: "Heroku"
+  }]
+};
+var _default = SKILLS;
+exports.default = _default;
+},{}],"Components/Skills.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _skills = _interopRequireDefault(require("../data/skills"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+var Skills = function Skills() {
+  var frontend = _skills.default['frontend'].map(function (SKILL) {
+    return _react.default.createElement("li", {
+      key: SKILL.id,
+      className: SKILL.category
+    }, SKILL.name);
+  });
+
+  var backend = _skills.default['backend'].map(function (SKILL) {
+    return _react.default.createElement("li", {
+      key: SKILL.id,
+      className: SKILL.category
+    }, SKILL.name);
+  });
+
+  var misc = _skills.default['misc'].map(function (SKILL) {
+    return _react.default.createElement("li", {
+      key: SKILL.id,
+      className: SKILL.category
+    }, SKILL.name);
+  });
+
+  return _react.default.createElement("section", {
+    id: "skills"
+  }, _react.default.createElement("h2", null, "Skills"), _react.default.createElement("div", {
+    className: "skillset"
+  }, _react.default.createElement("h3", null, "[...frontend]"), _react.default.createElement("ul", null, frontend)), _react.default.createElement("div", {
+    className: "skillset"
+  }, _react.default.createElement("h3", null, "[...backend]"), _react.default.createElement("ul", null, backend)), _react.default.createElement("div", {
+    className: "skillset"
+  }, _react.default.createElement("h3", null, "[...rest]"), _react.default.createElement("ul", null, misc)));
+};
+
+var _default = Skills;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","../data/skills":"data/skills.js"}],"assets/tri-be_logo.png":[function(require,module,exports) {
 module.exports = "/tri-be_logo.db2c8b15.png";
 },{}],"Components/Title.js":[function(require,module,exports) {
 "use strict";
@@ -24578,6 +24715,8 @@ var _Projects = _interopRequireDefault(require("./Projects"));
 
 var _SocialProfiles = _interopRequireDefault(require("./SocialProfiles"));
 
+var _Skills = _interopRequireDefault(require("./Skills"));
+
 var _triBe_logo = _interopRequireDefault(require("../assets/tri-be_logo.png"));
 
 var _Title = _interopRequireDefault(require("./Title"));
@@ -24671,7 +24810,7 @@ function (_Component) {
         id: "profile",
         alt: "profile",
         src: _triBe_logo.default
-      }), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "My name is Tristan."), _react.default.createElement("p", null, "I'm a multicultural full stack software engineer, polyglot, and ideator, always ready to learn something new!"), _react.default.createElement("p", null, "I live in Austin, and ride my bike everywhere I go."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!"), _react.default.createElement(_Projects.default, null), _react.default.createElement(_SocialProfiles.default, null), _react.default.createElement(_Zen.default, null));
+      }), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "My name is Tristan."), _react.default.createElement("p", null, "I'm a multicultural full stack software engineer, polyglot, and ideator, always ready to learn something new!"), _react.default.createElement("p", null, "I live in Austin, and ride my bike everywhere I go."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!"), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_SocialProfiles.default, null), _react.default.createElement(_Zen.default, null));
     }
   }]);
 
@@ -24679,7 +24818,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"../node_modules/react/index.js","./Projects":"Components/Projects.js","./SocialProfiles":"Components/SocialProfiles.js","../assets/tri-be_logo.png":"assets/tri-be_logo.png","./Title":"Components/Title.js","./ToolTip":"Components/ToolTip.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","./Zen":"Components/Zen.js","../index.css":"index.css"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./Projects":"Components/Projects.js","./SocialProfiles":"Components/SocialProfiles.js","./Skills":"Components/Skills.js","../assets/tri-be_logo.png":"assets/tri-be_logo.png","./Title":"Components/Title.js","./ToolTip":"Components/ToolTip.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","./Zen":"Components/Zen.js","../index.css":"index.css"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -24718,7 +24857,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54884" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63722" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
