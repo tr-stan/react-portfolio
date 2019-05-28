@@ -13,7 +13,7 @@ body {
 
 img {
 	margin: 0 auto;
-	width: 75vw;
+	width: 70vw;
 }
 
 .project {
@@ -59,7 +59,8 @@ img {
 }
 
 #mode-img {
-	width: 30px;
+	min-width: 30px;
+	width: 2vw;
 	height: auto;
 }
 
