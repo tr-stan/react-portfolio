@@ -4,6 +4,7 @@ import SocialProfiles from './SocialProfiles';
 import Skills from './Skills';
 import Profile from '../assets/tri-be_logo.png';
 import Title from './Title';
+import Header from './Header';
 import ToolTip from './ToolTip';
 import Moon from '../assets/moon.png';
 import Sun from '../assets/sun.png';
@@ -30,6 +31,7 @@ export default class App extends Component {
                     <img id="mode-img" src={modeImage} alt={altText}/>
                 </button>
             	<ToolTip mode={altText} />
+                <Header />
                 <img id='profile' alt='profile' src={Profile}/>
 				<Title />
 				<p>My name is Tristan.</p>
