@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Projects from './Projects';
 import SocialProfiles from './SocialProfiles';
 import Skills from './Skills';
-import Profile from '../assets/tri-be_logo.png';
 import Title from './Title';
 import Header from './Header';
+import Logo from './Logo';
 import ToolTip from './ToolTip';
 import Moon from '../assets/moon.png';
 import Sun from '../assets/sun.png';
@@ -32,7 +32,7 @@ export default class App extends Component {
                 </button>
             	<ToolTip mode={altText} />
                 <Header />
-                <img id='profile' alt='profile' src={Profile}/>
+                <Logo />
 				<Title />
 				<p>My name is Tristan.</p>
 				<p>I'm a multicultural full stack software engineer, polyglot, and ideator, always ready to learn something new!</p>

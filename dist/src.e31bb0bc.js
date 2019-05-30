@@ -29817,9 +29817,7 @@ var Skills = function Skills() {
 
 var _default = Skills;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../data/skills":"data/skills.js"}],"assets/tri-be_logo.png":[function(require,module,exports) {
-module.exports = "/tri-be_logo.db2c8b15.png";
-},{}],"Components/Title.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../data/skills":"data/skills.js"}],"Components/Title.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29958,7 +29956,33 @@ var Header = function Header() {
 
 var _default = Header;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js"}],"Components/ToolTip.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js"}],"assets/tri-be_logo.png":[function(require,module,exports) {
+module.exports = "/tri-be_logo.db2c8b15.png";
+},{}],"Components/Logo.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _triBe_logo = _interopRequireDefault(require("../assets/tri-be_logo.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Logo = function Logo() {
+  return _react.default.createElement("img", {
+    id: "logo",
+    alt: "profile",
+    src: _triBe_logo.default
+  });
+};
+
+var _default = Logo;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","../assets/tri-be_logo.png":"assets/tri-be_logo.png"}],"Components/ToolTip.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30209,11 +30233,11 @@ var _SocialProfiles = _interopRequireDefault(require("./SocialProfiles"));
 
 var _Skills = _interopRequireDefault(require("./Skills"));
 
-var _triBe_logo = _interopRequireDefault(require("../assets/tri-be_logo.png"));
-
 var _Title = _interopRequireDefault(require("./Title"));
 
 var _Header = _interopRequireDefault(require("./Header"));
+
+var _Logo = _interopRequireDefault(require("./Logo"));
 
 var _ToolTip = _interopRequireDefault(require("./ToolTip"));
 
@@ -30300,11 +30324,7 @@ function (_Component) {
         alt: altText
       })), _react.default.createElement(_ToolTip.default, {
         mode: altText
-      }), _react.default.createElement(_Header.default, null), _react.default.createElement("img", {
-        id: "profile",
-        alt: "profile",
-        src: _triBe_logo.default
-      }), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "My name is Tristan."), _react.default.createElement("p", null, "I'm a multicultural full stack software engineer, polyglot, and ideator, always ready to learn something new!"), _react.default.createElement("p", null, "I live in Austin, and ride my bike everywhere I go."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!"), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_SocialProfiles.default, {
+      }), _react.default.createElement(_Header.default, null), _react.default.createElement(_Logo.default, null), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "My name is Tristan."), _react.default.createElement("p", null, "I'm a multicultural full stack software engineer, polyglot, and ideator, always ready to learn something new!"), _react.default.createElement("p", null, "I live in Austin, and ride my bike everywhere I go."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!"), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_SocialProfiles.default, {
         mode: this.state.darkMode
       }), _react.default.createElement(_Zen.default, null));
     }
@@ -30314,7 +30334,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"../node_modules/react/index.js","./Projects":"Components/Projects.js","./SocialProfiles":"Components/SocialProfiles.js","./Skills":"Components/Skills.js","../assets/tri-be_logo.png":"assets/tri-be_logo.png","./Title":"Components/Title.js","./Header":"Components/Header.js","./ToolTip":"Components/ToolTip.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","./Zen":"Components/Zen.js","../index.css":"index.css"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./Projects":"Components/Projects.js","./SocialProfiles":"Components/SocialProfiles.js","./Skills":"Components/Skills.js","./Title":"Components/Title.js","./Header":"Components/Header.js","./Logo":"Components/Logo.js","./ToolTip":"Components/ToolTip.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","./Zen":"Components/Zen.js","../index.css":"index.css"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -30369,7 +30389,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65063" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65142" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
