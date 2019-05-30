@@ -29950,18 +29950,19 @@ var Header = function Header(props) {
   var Component = props.Component;
   var style = {
     display: 'inline-block',
+    clear: 'both',
     margin: 10,
     marginBottom: 30
   };
-  return _react.default.createElement("div", {
-    style: style
-  }, _react.default.createElement("h3", {
+  return _react.default.createElement("div", null, _react.default.createElement("p", {
     style: style
   }, _react.default.createElement(_reactRouterDom.Link, {
+    className: "link",
     to: "/"
-  }, "Home")), _react.default.createElement("h3", {
+  }, "Home")), _react.default.createElement("p", {
     style: style
   }, _react.default.createElement(_reactRouterDom.Link, {
+    className: "link",
     to: "/projects"
   }, "Projects")));
 };
@@ -30002,63 +30003,46 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-var ToolTip =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(ToolTip, _Component);
-
-  function ToolTip() {
-    _classCallCheck(this, ToolTip);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(ToolTip).apply(this, arguments));
-  }
-
-  _createClass(ToolTip, [{
-    key: "render",
-    value: function render() {
-      return _react.default.createElement("div", {
-        className: "tooltip"
-      }, _react.default.createElement("button", {
-        id: "mode",
-        onClick: this.props.toggleMode
-      }, _react.default.createElement("img", {
-        id: "mode-img",
-        src: this.props.modeImage,
-        alt: this.props.mode
-      })), _react.default.createElement("div", {
-        className: "tooltip-arrow"
-      }), _react.default.createElement("div", {
-        className: "tooltip-content"
-      }, this.props.mode));
-    }
-  }]);
-
-  return ToolTip;
-}(_react.Component);
+var ToolTip = function ToolTip(props) {
+  return _react.default.createElement("div", {
+    className: "tooltip"
+  }, _react.default.createElement("div", {
+    className: "tooltip-arrow"
+  }), _react.default.createElement("div", {
+    className: "tooltip-content"
+  }, props.mode));
+};
 
 var _default = ToolTip;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"Components/ModeButton.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ModeButton = function ModeButton(props) {
+  return _react.default.createElement("button", {
+    id: "mode",
+    onClick: props.action
+  }, _react.default.createElement("img", {
+    id: "mode-img",
+    src: props.modeImage,
+    alt: props.mode
+  }));
+};
+
+var _default = ModeButton;
 exports.default = _default;
 },{"react":"../node_modules/react/index.js"}],"assets/moon.png":[function(require,module,exports) {
 module.exports = "/moon.bdc28cbf.png";
@@ -30142,7 +30126,9 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, "\"", this.state.zenSaying || "Design for failure.", "\" - GitHub");
+      return _react.default.createElement("div", {
+        id: "zen"
+      }, "\"", this.state.zenSaying || "Design for failure.", "\" - GitHub");
     }
   }]);
 
@@ -30246,6 +30232,8 @@ var _Logo = _interopRequireDefault(require("./Logo"));
 
 var _ToolTip = _interopRequireDefault(require("./ToolTip"));
 
+var _ModeButton = _interopRequireDefault(require("./ModeButton"));
+
 var _moon = _interopRequireDefault(require("../assets/moon.png"));
 
 var _sun = _interopRequireDefault(require("../assets/sun.png"));
@@ -30320,11 +30308,15 @@ function (_Component) {
       var altText = this.state.darkMode ? 'Dark Mode' : 'Light Mode';
       return _react.default.createElement("div", {
         id: "app"
-      }, _react.default.createElement(_ToolTip.default, {
+      }, _react.default.createElement("div", {
+        id: "sideIcon"
+      }, _react.default.createElement(_ModeButton.default, {
         mode: altText,
-        toggleMode: this.toggleMode,
+        action: this.toggleMode,
         modeImage: modeImage
-      }), _react.default.createElement(_Header.default, null), _react.default.createElement(_Logo.default, null), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "My name is Tristan."), _react.default.createElement("p", null, "I'm a multicultural full stack software engineer, polyglot, and ideator, always ready to learn something new!"), _react.default.createElement("p", null, "I live in Austin, and ride my bike everywhere I go."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!"), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_SocialProfiles.default, {
+      }), _react.default.createElement(_ToolTip.default, {
+        mode: altText
+      })), _react.default.createElement(_Header.default, null), _react.default.createElement(_Logo.default, null), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "I'm Tristan, a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! I live in sunny Austin, TX."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!"), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_SocialProfiles.default, {
         mode: this.state.darkMode
       }), _react.default.createElement(_Zen.default, null));
     }
@@ -30334,7 +30326,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"../node_modules/react/index.js","./Projects":"Components/Projects.js","./SocialProfiles":"Components/SocialProfiles.js","./Skills":"Components/Skills.js","./Title":"Components/Title.js","./Header":"Components/Header.js","./Logo":"Components/Logo.js","./ToolTip":"Components/ToolTip.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","./Zen":"Components/Zen.js","../index.css":"index.css"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./Projects":"Components/Projects.js","./SocialProfiles":"Components/SocialProfiles.js","./Skills":"Components/Skills.js","./Title":"Components/Title.js","./Header":"Components/Header.js","./Logo":"Components/Logo.js","./ToolTip":"Components/ToolTip.js","./ModeButton":"Components/ModeButton.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","./Zen":"Components/Zen.js","../index.css":"index.css"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -30389,7 +30381,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65142" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52698" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

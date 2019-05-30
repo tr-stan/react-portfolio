@@ -6,6 +6,7 @@ import Title from './Title';
 import Header from './Header';
 import Logo from './Logo';
 import ToolTip from './ToolTip';
+import ModeButton from './ModeButton';
 import Moon from '../assets/moon.png';
 import Sun from '../assets/sun.png';
 import Zen from './Zen';
@@ -27,13 +28,14 @@ export default class App extends Component {
         let altText = this.state.darkMode ? 'Dark Mode' : 'Light Mode';
         return (
             <div id="app">
-            	<ToolTip mode={altText} toggleMode={this.toggleMode} modeImage={modeImage}/>
+                <div id="sideIcon">
+                <ModeButton mode={altText} action={this.toggleMode} modeImage={modeImage} />
+            	<ToolTip mode={altText} />
+                </div>
                 <Header />
                 <Logo />
 				<Title />
-				<p>My name is Tristan.</p>
-				<p>I'm a multicultural full stack software engineer, polyglot, and ideator, always ready to learn something new!</p>
-				<p>I live in Austin, and ride my bike everywhere I go.</p>
+				<p>I'm Tristan, a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! I live in sunny Austin, TX.</p>
 				<p>My forte is the MERN stack, but I enjoy Python, Vue, and SQL!</p>
 				<Projects />
                 <Skills />
