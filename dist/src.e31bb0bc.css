@@ -6,7 +6,6 @@ body {
 	text-align: center;
 	font-family: 'Roboto Mono', Arial, sans-serif;
 	font-size: 20px;
-	padding: 5vh 5vw;
 	background-color: rgb(200,194,204);
 	color: rgb(56, 54, 55);
 }
@@ -51,10 +50,10 @@ img {
 .tooltip {
 	position: sticky;
 	top: 6vh;
+	left: 10px;
 	width: 50px;
 	margin-top: 5px;
-	margin-left: -3vw;
-	display: block;
+	display: inline-block;
 	font-size: 8px;
 }
 
@@ -65,16 +64,8 @@ img {
 }
 
 #mode {
-	position: sticky;
-	display: block;
-	top: 1vh;
-	margin-top: -20px;
-	margin-left: -3vw;
 	background-color: rgba(200,194,204, 0);
 	color: rgb(56,54,55);
-	font-family: inherit;
-	font-size: 9px;
-	padding: 2px;
 	border: none;
 }
 
@@ -87,11 +78,11 @@ img {
 }
 
 #logo {
-	margin: -20px auto 20px auto;
 	max-height: 45vh;
 	max-width: 75vw;
 	height:  auto;
 	width: auto;
+	display: block;
 	border-radius: 220px;
 	box-shadow: 0 0 5px 1px rgb(56, 54, 55);
 }

@@ -27,10 +27,7 @@ export default class App extends Component {
         let altText = this.state.darkMode ? 'Dark Mode' : 'Light Mode';
         return (
             <div id="app">
-            	<button id="mode" onClick={this.toggleMode}>
-                    <img id="mode-img" src={modeImage} alt={altText}/>
-                </button>
-            	<ToolTip mode={altText} />
+            	<ToolTip mode={altText} toggleMode={this.toggleMode} modeImage={modeImage}/>
                 <Header />
                 <Logo />
 				<Title />

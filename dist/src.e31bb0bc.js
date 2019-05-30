@@ -29946,12 +29946,24 @@ var _reactRouterDom = require("react-router-dom");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Header = function Header() {
-  return _react.default.createElement("div", null, _react.default.createElement(_reactRouterDom.Link, {
+var Header = function Header(props) {
+  var Component = props.Component;
+  var style = {
+    display: 'inline-block',
+    margin: 10,
+    marginBottom: 30
+  };
+  return _react.default.createElement("div", {
+    style: style
+  }, _react.default.createElement("h3", {
+    style: style
+  }, _react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, "Home"), _react.default.createElement(_reactRouterDom.Link, {
+  }, "Home")), _react.default.createElement("h3", {
+    style: style
+  }, _react.default.createElement(_reactRouterDom.Link, {
     to: "/projects"
-  }, "Projects"));
+  }, "Projects")));
 };
 
 var _default = Header;
@@ -30004,15 +30016,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var ToolTip =
 /*#__PURE__*/
@@ -30020,21 +30030,9 @@ function (_Component) {
   _inherits(ToolTip, _Component);
 
   function ToolTip() {
-    var _getPrototypeOf2;
-
-    var _this;
-
     _classCallCheck(this, ToolTip);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ToolTip)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_this), "state", {});
-
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(ToolTip).apply(this, arguments));
   }
 
   _createClass(ToolTip, [{
@@ -30042,7 +30040,14 @@ function (_Component) {
     value: function render() {
       return _react.default.createElement("div", {
         className: "tooltip"
-      }, _react.default.createElement("div", {
+      }, _react.default.createElement("button", {
+        id: "mode",
+        onClick: this.props.toggleMode
+      }, _react.default.createElement("img", {
+        id: "mode-img",
+        src: this.props.modeImage,
+        alt: this.props.mode
+      })), _react.default.createElement("div", {
         className: "tooltip-arrow"
       }), _react.default.createElement("div", {
         className: "tooltip-content"
@@ -30137,7 +30142,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, "\"", this.state.zenSaying, "\" - GitHub");
+      return _react.default.createElement("div", null, "\"", this.state.zenSaying || "Design for failure.", "\" - GitHub");
     }
   }]);
 
@@ -30315,15 +30320,10 @@ function (_Component) {
       var altText = this.state.darkMode ? 'Dark Mode' : 'Light Mode';
       return _react.default.createElement("div", {
         id: "app"
-      }, _react.default.createElement("button", {
-        id: "mode",
-        onClick: this.toggleMode
-      }, _react.default.createElement("img", {
-        id: "mode-img",
-        src: modeImage,
-        alt: altText
-      })), _react.default.createElement(_ToolTip.default, {
-        mode: altText
+      }, _react.default.createElement(_ToolTip.default, {
+        mode: altText,
+        toggleMode: this.toggleMode,
+        modeImage: modeImage
       }), _react.default.createElement(_Header.default, null), _react.default.createElement(_Logo.default, null), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "My name is Tristan."), _react.default.createElement("p", null, "I'm a multicultural full stack software engineer, polyglot, and ideator, always ready to learn something new!"), _react.default.createElement("p", null, "I live in Austin, and ride my bike everywhere I go."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!"), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_SocialProfiles.default, {
         mode: this.state.darkMode
       }), _react.default.createElement(_Zen.default, null));
