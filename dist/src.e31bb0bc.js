@@ -29946,15 +29946,15 @@ var _reactRouterDom = require("react-router-dom");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Header = function Header(props) {
-  var Component = props.Component;
+var Header = function Header(_ref) {
+  var children = _ref.children;
   var style = {
     display: 'inline-block',
     clear: 'both',
     margin: 10,
     marginBottom: 30
   };
-  return _react.default.createElement("div", null, _react.default.createElement("p", {
+  return _react.default.createElement("div", null, _react.default.createElement("div", null, _react.default.createElement("p", {
     style: style
   }, _react.default.createElement(_reactRouterDom.Link, {
     className: "link",
@@ -29964,7 +29964,7 @@ var Header = function Header(props) {
   }, _react.default.createElement(_reactRouterDom.Link, {
     className: "link",
     to: "/projects"
-  }, "Projects")));
+  }, "Projects"))), children);
 };
 
 var _default = Header;
@@ -30316,7 +30316,7 @@ function (_Component) {
         modeImage: modeImage
       }), _react.default.createElement(_ToolTip.default, {
         mode: altText
-      })), _react.default.createElement(_Header.default, null), _react.default.createElement(_Logo.default, null), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "I'm Tristan, a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! I live in sunny Austin, TX."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!"), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_SocialProfiles.default, {
+      })), _react.default.createElement(_Logo.default, null), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "I'm Tristan, a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! I live in sunny Austin, TX."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!"), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_SocialProfiles.default, {
         mode: this.state.darkMode
       }), _react.default.createElement(_Zen.default, null));
     }
@@ -30341,6 +30341,8 @@ var _App = _interopRequireDefault(require("./Components/App"));
 
 var _Projects = _interopRequireDefault(require("./Components/Projects"));
 
+var _Header = _interopRequireDefault(require("./Components/Header"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom.default.render(_react.default.createElement(_reactRouterDom.Router, {
@@ -30348,12 +30350,16 @@ _reactDom.default.render(_react.default.createElement(_reactRouterDom.Router, {
 }, _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Route, {
   exact: true,
   path: "/",
-  component: _App.default
+  render: function render() {
+    return _react.default.createElement(_Header.default, null, _react.default.createElement(_App.default, null));
+  }
 }), _react.default.createElement(_reactRouterDom.Route, {
   path: "/projects",
-  component: _Projects.default
+  render: function render() {
+    return _react.default.createElement(_Header.default, null, _react.default.createElement(_Projects.default, null));
+  }
 }))), document.getElementById('root'));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js","history/createBrowserHistory":"../node_modules/history/createBrowserHistory.js","./Components/App":"Components/App.js","./Components/Projects":"Components/Projects.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js","history/createBrowserHistory":"../node_modules/history/createBrowserHistory.js","./Components/App":"Components/App.js","./Components/Projects":"Components/Projects.js","./Components/Header":"Components/Header.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -30381,7 +30387,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52698" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56726" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

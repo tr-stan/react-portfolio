@@ -32,7 +32,6 @@ export default class App extends Component {
                 <ModeButton mode={altText} action={this.toggleMode} modeImage={modeImage} />
             	<ToolTip mode={altText} />
                 </div>
-                <Header />
                 <Logo />
 				<Title />
 				<p>I'm Tristan, a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! I live in sunny Austin, TX.</p>
