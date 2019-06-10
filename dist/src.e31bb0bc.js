@@ -29483,7 +29483,7 @@ var PROJECTS = [{
   id: 3,
   title: "Local Weather App",
   description: "A simple local weather app that displays local weather conditions in Fahrenheit or Celsius using JSON data from the openweathermap API.",
-  link: "https://mazer-lazer.herokuapp.com",
+  link: "https://s.codepen.io/tri-be/debug/eZLqzW/mWMoNxVpEQLk",
   image: _localWeather.default
 }, {
   id: 4,
@@ -29538,149 +29538,7 @@ var Projects = function Projects() {
 
 var _default = Projects;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../data/projects":"data/projects.js"}],"assets/envelope.png":[function(require,module,exports) {
-module.exports = "/envelope.3604496a.png";
-},{}],"assets/github.png":[function(require,module,exports) {
-module.exports = "/github.23c538a5.png";
-},{}],"assets/instagram.png":[function(require,module,exports) {
-module.exports = "/instagram.77044c70.png";
-},{}],"assets/linkedin.png":[function(require,module,exports) {
-module.exports = "/linkedin.90c4945d.png";
-},{}],"data/socialProfiles.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _envelope = _interopRequireDefault(require("../assets/envelope.png"));
-
-var _github = _interopRequireDefault(require("../assets/github.png"));
-
-var _instagram = _interopRequireDefault(require("../assets/instagram.png"));
-
-var _linkedin = _interopRequireDefault(require("../assets/linkedin.png"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var SOCIAL_PROFILES = [{
-  id: 1,
-  link: 'mailto:betriistan@gmail.com',
-  image: _envelope.default
-}, {
-  id: 2,
-  link: 'https://github.com/tri-be',
-  image: _github.default
-}, {
-  id: 3,
-  link: 'https://www.instagram.com/tri__be/?hl=en',
-  image: _instagram.default
-}, {
-  id: 4,
-  link: 'https://www.linkedin.com/in/tristanbennett1',
-  image: _linkedin.default
-}];
-var _default = SOCIAL_PROFILES;
-exports.default = _default;
-},{"../assets/envelope.png":"assets/envelope.png","../assets/github.png":"assets/github.png","../assets/instagram.png":"assets/instagram.png","../assets/linkedin.png":"assets/linkedin.png"}],"assets/mail-light-md.png":[function(require,module,exports) {
-module.exports = "/mail-light-md.0d415013.png";
-},{}],"assets/github-light-md.png":[function(require,module,exports) {
-module.exports = "/github-light-md.6fdad683.png";
-},{}],"assets/instagram-light-md.png":[function(require,module,exports) {
-module.exports = "/instagram-light-md.f7101625.png";
-},{}],"assets/linkedin-light-md.png":[function(require,module,exports) {
-module.exports = "/linkedin-light-md.5475bbde.png";
-},{}],"data/socialProfilesLight.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _mailLightMd = _interopRequireDefault(require("../assets/mail-light-md.png"));
-
-var _githubLightMd = _interopRequireDefault(require("../assets/github-light-md.png"));
-
-var _instagramLightMd = _interopRequireDefault(require("../assets/instagram-light-md.png"));
-
-var _linkedinLightMd = _interopRequireDefault(require("../assets/linkedin-light-md.png"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var SOCIAL_PROFILES_LIGHT = [{
-  id: 1,
-  link: 'mailto:betriistan@gmail.com',
-  image: _mailLightMd.default
-}, {
-  id: 2,
-  link: 'https://github.com/tri-be',
-  image: _githubLightMd.default
-}, {
-  id: 3,
-  link: 'https://www.instagram.com/tri__be/?hl=en',
-  image: _instagramLightMd.default
-}, {
-  id: 4,
-  link: 'https://www.linkedin.com/in/tristanbennett1',
-  image: _linkedinLightMd.default
-}];
-var _default = SOCIAL_PROFILES_LIGHT;
-exports.default = _default;
-},{"../assets/mail-light-md.png":"assets/mail-light-md.png","../assets/github-light-md.png":"assets/github-light-md.png","../assets/instagram-light-md.png":"assets/instagram-light-md.png","../assets/linkedin-light-md.png":"assets/linkedin-light-md.png"}],"Components/SocialProfiles.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _socialProfiles = _interopRequireDefault(require("../data/socialProfiles"));
-
-var _socialProfilesLight = _interopRequireDefault(require("../data/socialProfilesLight"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-var SocialProfile = function SocialProfile(props) {
-  var _props$socialProfile = props.socialProfile,
-      id = _props$socialProfile.id,
-      link = _props$socialProfile.link,
-      image = _props$socialProfile.image;
-  return _react.default.createElement("div", {
-    key: id,
-    style: {
-      display: 'inline-block'
-    }
-  }, _react.default.createElement("a", {
-    href: link
-  }, _react.default.createElement("img", {
-    src: image,
-    alt: "social profile ".concat(id),
-    style: {
-      width: 35,
-      margin: 35
-    }
-  })));
-};
-
-var SocialProfiles = function SocialProfiles(props) {
-  var profiles = props.mode ? _socialProfiles.default : _socialProfilesLight.default;
-  return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Connect With Me!"), profiles.map(function (SOCIAL_PROFILE) {
-    return _react.default.createElement(SocialProfile, {
-      key: SOCIAL_PROFILE.id,
-      socialProfile: SOCIAL_PROFILE
-    });
-  }));
-};
-
-var _default = SocialProfiles;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","../data/socialProfiles":"data/socialProfiles.js","../data/socialProfilesLight":"data/socialProfilesLight.js"}],"data/skills.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../data/projects":"data/projects.js"}],"data/skills.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29932,70 +29790,7 @@ function (_Component) {
 
 var _default = Title;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"Components/Header.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _reactRouterDom = require("react-router-dom");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Header = function Header(_ref) {
-  var children = _ref.children;
-  var style = {
-    display: 'inline-block',
-    clear: 'both',
-    margin: 10,
-    marginBottom: 30
-  };
-  return _react.default.createElement("div", null, _react.default.createElement("div", null, _react.default.createElement("p", {
-    style: style
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    className: "link",
-    to: "/"
-  }, "Home")), _react.default.createElement("p", {
-    style: style
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    className: "link",
-    to: "/projects"
-  }, "Projects"))), children);
-};
-
-var _default = Header;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js"}],"assets/tri-be_logo.png":[function(require,module,exports) {
-module.exports = "/tri-be_logo.db2c8b15.png";
-},{}],"Components/Logo.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _triBe_logo = _interopRequireDefault(require("../assets/tri-be_logo.png"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Logo = function Logo() {
-  return _react.default.createElement("img", {
-    id: "logo",
-    alt: "profile",
-    src: _triBe_logo.default
-  });
-};
-
-var _default = Logo;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","../assets/tri-be_logo.png":"assets/tri-be_logo.png"}],"Components/ToolTip.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js"}],"Components/ToolTip.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30048,7 +29843,296 @@ exports.default = _default;
 module.exports = "/moon.bdc28cbf.png";
 },{}],"assets/sun.png":[function(require,module,exports) {
 module.exports = "/sun.8377c53e.png";
-},{}],"Components/Zen.js":[function(require,module,exports) {
+},{}],"assets/envelope.png":[function(require,module,exports) {
+module.exports = "/envelope.3604496a.png";
+},{}],"assets/github.png":[function(require,module,exports) {
+module.exports = "/github.23c538a5.png";
+},{}],"assets/instagram.png":[function(require,module,exports) {
+module.exports = "/instagram.77044c70.png";
+},{}],"assets/linkedin.png":[function(require,module,exports) {
+module.exports = "/linkedin.90c4945d.png";
+},{}],"data/socialProfiles.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _envelope = _interopRequireDefault(require("../assets/envelope.png"));
+
+var _github = _interopRequireDefault(require("../assets/github.png"));
+
+var _instagram = _interopRequireDefault(require("../assets/instagram.png"));
+
+var _linkedin = _interopRequireDefault(require("../assets/linkedin.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SOCIAL_PROFILES = [{
+  id: 1,
+  link: 'mailto:betriistan@gmail.com',
+  image: _envelope.default
+}, {
+  id: 2,
+  link: 'https://github.com/tri-be',
+  image: _github.default
+}, {
+  id: 3,
+  link: 'https://www.instagram.com/tri__be/?hl=en',
+  image: _instagram.default
+}, {
+  id: 4,
+  link: 'https://www.linkedin.com/in/tristanbennett1',
+  image: _linkedin.default
+}];
+var _default = SOCIAL_PROFILES;
+exports.default = _default;
+},{"../assets/envelope.png":"assets/envelope.png","../assets/github.png":"assets/github.png","../assets/instagram.png":"assets/instagram.png","../assets/linkedin.png":"assets/linkedin.png"}],"assets/mail-light-md.png":[function(require,module,exports) {
+module.exports = "/mail-light-md.0d415013.png";
+},{}],"assets/github-light-md.png":[function(require,module,exports) {
+module.exports = "/github-light-md.6fdad683.png";
+},{}],"assets/instagram-light-md.png":[function(require,module,exports) {
+module.exports = "/instagram-light-md.f7101625.png";
+},{}],"assets/linkedin-light-md.png":[function(require,module,exports) {
+module.exports = "/linkedin-light-md.5475bbde.png";
+},{}],"data/socialProfilesLight.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _mailLightMd = _interopRequireDefault(require("../assets/mail-light-md.png"));
+
+var _githubLightMd = _interopRequireDefault(require("../assets/github-light-md.png"));
+
+var _instagramLightMd = _interopRequireDefault(require("../assets/instagram-light-md.png"));
+
+var _linkedinLightMd = _interopRequireDefault(require("../assets/linkedin-light-md.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SOCIAL_PROFILES_LIGHT = [{
+  id: 1,
+  link: 'mailto:betriistan@gmail.com',
+  image: _mailLightMd.default
+}, {
+  id: 2,
+  link: 'https://github.com/tri-be',
+  image: _githubLightMd.default
+}, {
+  id: 3,
+  link: 'https://www.instagram.com/tri__be/?hl=en',
+  image: _instagramLightMd.default
+}, {
+  id: 4,
+  link: 'https://www.linkedin.com/in/tristanbennett1',
+  image: _linkedinLightMd.default
+}];
+var _default = SOCIAL_PROFILES_LIGHT;
+exports.default = _default;
+},{"../assets/mail-light-md.png":"assets/mail-light-md.png","../assets/github-light-md.png":"assets/github-light-md.png","../assets/instagram-light-md.png":"assets/instagram-light-md.png","../assets/linkedin-light-md.png":"assets/linkedin-light-md.png"}],"Components/SocialProfiles.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _socialProfiles = _interopRequireDefault(require("../data/socialProfiles"));
+
+var _socialProfilesLight = _interopRequireDefault(require("../data/socialProfilesLight"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+var SocialProfile = function SocialProfile(props) {
+  var _props$socialProfile = props.socialProfile,
+      id = _props$socialProfile.id,
+      link = _props$socialProfile.link,
+      image = _props$socialProfile.image;
+  return _react.default.createElement("div", {
+    key: id,
+    style: {
+      display: 'inline-block'
+    }
+  }, _react.default.createElement("a", {
+    href: link
+  }, _react.default.createElement("img", {
+    src: image,
+    alt: "social profile ".concat(id),
+    style: {
+      width: 35,
+      margin: 35
+    }
+  })));
+};
+
+var SocialProfiles = function SocialProfiles(props) {
+  var profiles = props.mode ? _socialProfiles.default : _socialProfilesLight.default;
+  return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Connect With Me!"), profiles.map(function (SOCIAL_PROFILE) {
+    return _react.default.createElement(SocialProfile, {
+      key: SOCIAL_PROFILE.id,
+      socialProfile: SOCIAL_PROFILE
+    });
+  }));
+};
+
+var _default = SocialProfiles;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","../data/socialProfiles":"data/socialProfiles.js","../data/socialProfilesLight":"data/socialProfilesLight.js"}],"Components/Header.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _ToolTip = _interopRequireDefault(require("./ToolTip"));
+
+var _ModeButton = _interopRequireDefault(require("./ModeButton"));
+
+var _moon = _interopRequireDefault(require("../assets/moon.png"));
+
+var _sun = _interopRequireDefault(require("../assets/sun.png"));
+
+var _SocialProfiles = _interopRequireDefault(require("./SocialProfiles"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Header =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Header, _Component);
+
+  function Header() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, Header);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Header)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      darkMode: true,
+      mode: 'Dark Mode'
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "toggleMode", function () {
+      _this.setState({
+        darkMode: !_this.state.darkMode
+      });
+
+      _this.state.darkMode ? document.body.classList.add('dark') : document.body.classList.remove('dark');
+    });
+
+    return _this;
+  }
+
+  _createClass(Header, [{
+    key: "render",
+    value: function render() {
+      var style = {
+        display: 'inline-block',
+        clear: 'both',
+        margin: 10,
+        marginBottom: 30
+      };
+      var modeImage = this.state.darkMode ? _moon.default : _sun.default;
+      var altText = this.state.darkMode ? 'Dark Mode' : 'Light Mode';
+      return _react.default.createElement("div", null, _react.default.createElement("div", {
+        className: "sideIcon"
+      }, _react.default.createElement(_ModeButton.default, {
+        mode: altText,
+        action: this.toggleMode,
+        modeImage: modeImage
+      }), _react.default.createElement(_ToolTip.default, {
+        mode: altText
+      })), _react.default.createElement("div", {
+        className: "sideIcon"
+      }, _react.default.createElement("p", {
+        style: style
+      }, _react.default.createElement(_reactRouterDom.Link, {
+        className: "link",
+        to: "/"
+      }, "Home")), _react.default.createElement("p", {
+        style: style
+      }, _react.default.createElement(_reactRouterDom.Link, {
+        className: "link",
+        to: "/projects"
+      }, "Projects"))), this.props.children, _react.default.createElement(_SocialProfiles.default, {
+        mode: this.state.darkMode
+      }));
+    }
+  }]);
+
+  return Header;
+}(_react.Component);
+
+exports.default = Header;
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js","./ToolTip":"Components/ToolTip.js","./ModeButton":"Components/ModeButton.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","./SocialProfiles":"Components/SocialProfiles.js"}],"assets/tri-be_logo-1.png":[function(require,module,exports) {
+module.exports = "/tri-be_logo-1.7eed02d6.png";
+},{}],"Components/Logo.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _triBe_logo = _interopRequireDefault(require("../assets/tri-be_logo-1.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Logo = function Logo() {
+  return _react.default.createElement("img", {
+    id: "logo",
+    alt: "profile",
+    src: _triBe_logo.default
+  });
+};
+
+var _default = Logo;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","../assets/tri-be_logo-1.png":"assets/tri-be_logo-1.png"}],"Components/Zen.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30220,8 +30304,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _Projects = _interopRequireDefault(require("./Projects"));
 
-var _SocialProfiles = _interopRequireDefault(require("./SocialProfiles"));
-
 var _Skills = _interopRequireDefault(require("./Skills"));
 
 var _Title = _interopRequireDefault(require("./Title"));
@@ -30229,14 +30311,6 @@ var _Title = _interopRequireDefault(require("./Title"));
 var _Header = _interopRequireDefault(require("./Header"));
 
 var _Logo = _interopRequireDefault(require("./Logo"));
-
-var _ToolTip = _interopRequireDefault(require("./ToolTip"));
-
-var _ModeButton = _interopRequireDefault(require("./ModeButton"));
-
-var _moon = _interopRequireDefault(require("../assets/moon.png"));
-
-var _sun = _interopRequireDefault(require("../assets/sun.png"));
 
 var _Zen = _interopRequireDefault(require("./Zen"));
 
@@ -30256,15 +30330,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var App =
 /*#__PURE__*/
@@ -30272,53 +30344,17 @@ function (_Component) {
   _inherits(App, _Component);
 
   function App() {
-    var _getPrototypeOf2;
-
-    var _this;
-
     _classCallCheck(this, App);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(App)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      displayBio: false,
-      darkMode: true,
-      mode: 'Dark Mode'
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "toggleMode", function () {
-      _this.setState({
-        darkMode: !_this.state.darkMode
-      });
-
-      _this.state.darkMode ? document.body.classList.add('dark') : document.body.classList.remove('dark');
-    });
-
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(App).apply(this, arguments));
   }
 
   _createClass(App, [{
     key: "render",
     value: function render() {
-      var modeImage = this.state.darkMode ? _moon.default : _sun.default;
-      var altText = this.state.darkMode ? 'Dark Mode' : 'Light Mode';
       return _react.default.createElement("div", {
         id: "app"
-      }, _react.default.createElement("div", {
-        id: "sideIcon"
-      }, _react.default.createElement(_ModeButton.default, {
-        mode: altText,
-        action: this.toggleMode,
-        modeImage: modeImage
-      }), _react.default.createElement(_ToolTip.default, {
-        mode: altText
-      })), _react.default.createElement(_Logo.default, null), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "I'm Tristan, a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! I live in sunny Austin, TX."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!"), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_SocialProfiles.default, {
-        mode: this.state.darkMode
-      }), _react.default.createElement(_Zen.default, null));
+      }, _react.default.createElement(_Logo.default, null), _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "I'm tr;be, a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! I live in sunny Austin, TX."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!"), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_Zen.default, null));
     }
   }]);
 
@@ -30326,7 +30362,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"../node_modules/react/index.js","./Projects":"Components/Projects.js","./SocialProfiles":"Components/SocialProfiles.js","./Skills":"Components/Skills.js","./Title":"Components/Title.js","./Header":"Components/Header.js","./Logo":"Components/Logo.js","./ToolTip":"Components/ToolTip.js","./ModeButton":"Components/ModeButton.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","./Zen":"Components/Zen.js","../index.css":"index.css"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./Projects":"Components/Projects.js","./Skills":"Components/Skills.js","./Title":"Components/Title.js","./Header":"Components/Header.js","./Logo":"Components/Logo.js","./Zen":"Components/Zen.js","../index.css":"index.css"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -30387,7 +30423,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56726" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51067" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

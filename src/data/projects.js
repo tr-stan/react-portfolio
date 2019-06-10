@@ -23,7 +23,7 @@ const PROJECTS = [
 		id: 3,
 		title: "Local Weather App",
 		description: "A simple local weather app that displays local weather conditions in Fahrenheit or Celsius using JSON data from the openweathermap API.",
-		link: "https://mazer-lazer.herokuapp.com",
+		link: "https://s.codepen.io/tri-be/debug/eZLqzW/mWMoNxVpEQLk",
 		image: localForecast
 	},
 	{

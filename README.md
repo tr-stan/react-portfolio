@@ -22,3 +22,10 @@ Builds the app for production (npm run build) to the `build` folder and opens it
 ### `parcel build`
 
 The build is bundled by parcel and ready to be deployed!
+
+### note on the topographic imagery
+the topographic patterns were created using contours
+
+https://contours.axismaps.com/#7/47.027/-159.285 is the exact coordinates of the images, from the pacific seabed
+
+the colors used were #313638 and #e8e9eb

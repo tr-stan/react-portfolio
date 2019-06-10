@@ -6,8 +6,8 @@ body {
 	text-align: center;
 	font-family: 'Roboto Mono', Arial, sans-serif;
 	font-size: 20px;
-	background-color: rgb(200,194,204);
-	color: rgb(56, 54, 55);
+	background-color: rgb(238,233,229);
+	color: rgb(49,54,56);
 }
 
 img {
@@ -63,16 +63,17 @@ p {
 }
 
 .dark {
-	background-color: rgba(50, 50, 50, 1);
+	background-color: rgba(49,54,56, 1);
 	color: rgb(200,194,204);
 }
 
 .dark .link {
 	color: rgb(153, 178, 221);
 }
-#sideIcon {
+.sideIcon {
 	float: left;
 	position: sticky;
+	display: block;
 	top: 1vh;
 }
 
@@ -96,7 +97,7 @@ p {
 	top: 10px;
 	display: inline-block;
 	background-color: rgba(200,194,204, 0);
-	color: rgb(56,54,55);
+	color: rgb(49,54,56);
 	border: none;
 }
 
@@ -115,11 +116,10 @@ p {
 	width: auto;
 	display: block;
 	border-radius: 220px;
-	box-shadow: 0 0 5px 1px rgb(56, 54, 55);
 }
 
 #zen {
-	margin: 0 auto 50px auto;
+	margin: 20px auto 50px auto;
 }
 
 @keyframes fade-out {
