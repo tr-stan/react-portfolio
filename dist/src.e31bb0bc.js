@@ -324,7 +324,7 @@ checkPropTypes.resetWarningCache = function () {
 
 module.exports = checkPropTypes;
 },{"./lib/ReactPropTypesSecret":"../node_modules/prop-types/lib/ReactPropTypesSecret.js"}],"../node_modules/react/cjs/react.development.js":[function(require,module,exports) {
-/** @license React v16.6.1
+/** @license React v16.8.6
  * react.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -343,7 +343,7 @@ if ("development" !== "production") {
     var checkPropTypes = require('prop-types/checkPropTypes'); // TODO: this is special because it gets imported during build.
 
 
-    var ReactVersion = '16.6.3'; // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    var ReactVersion = '16.8.6'; // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
     // nor polyfill, then a plain number is used for performance.
 
     var hasSymbol = typeof Symbol === 'function' && Symbol.for;
@@ -375,25 +375,6 @@ if ("development" !== "production") {
 
       return null;
     }
-
-    var enableHooks = false; // Helps identify side effects in begin-phase lifecycle hooks and setState reducers:
-    // In some cases, StrictMode should also double-render lifecycles.
-    // This can be confusing for tests though,
-    // And it can be bad for performance in production.
-    // This feature flag can be used to control the behavior:
-    // To preserve the "Pause on caught exceptions" behavior of the debugger, we
-    // replay the begin phase of a failed component inside invokeGuardedCallback.
-    // Warn about deprecated, async-unsafe lifecycles; relates to RFC #6:
-    // Gather advanced timing metrics for Profiler subtrees.
-    // Trace which interactions trigger each commit.
-    // Only used in www builds.
-    // Only used in www builds.
-    // React Fire: prevent the value and checked attributes from syncing
-    // with their related DOM properties
-    // These APIs will no longer be "unstable" in the upcoming 16.7 release,
-    // Control this behavior with a flag to support 16.6 minor releases in the meanwhile.
-
-    var enableStableConcurrentModeAPIs = false;
     /**
      * Use invariant() to assert state which your program assumes to be true.
      *
@@ -404,6 +385,7 @@ if ("development" !== "production") {
      * The invariant message will be stripped in production, but the invariant
      * will remain to ensure logic does not differ in production.
      */
+
 
     var validateFormat = function () {};
 
@@ -759,20 +741,30 @@ if ("development" !== "production") {
       return refObject;
     }
     /**
+     * Keeps track of the current dispatcher.
+     */
+
+
+    var ReactCurrentDispatcher = {
+      /**
+       * @internal
+       * @type {ReactComponent}
+       */
+      current: null
+    };
+    /**
      * Keeps track of the current owner.
      *
      * The current owner is the component who should own any components that are
      * currently being constructed.
      */
 
-
     var ReactCurrentOwner = {
       /**
        * @internal
        * @type {ReactComponent}
        */
-      current: null,
-      currentDispatcher: null
+      current: null
     };
     var BEFORE_SLASH_RE = /^(.*)[\\\/]/;
 
@@ -919,6 +911,7 @@ if ("development" !== "production") {
       };
     }
     var ReactSharedInternals = {
+      ReactCurrentDispatcher: ReactCurrentDispatcher,
       ReactCurrentOwner: ReactCurrentOwner,
       // Used by renderers to avoid bundling object-assign twice in UMD bundles:
       assign: _assign
@@ -1714,13 +1707,49 @@ if ("development" !== "production") {
     }
 
     function lazy(ctor) {
-      return {
+      var lazyType = {
         $$typeof: REACT_LAZY_TYPE,
         _ctor: ctor,
         // React uses these fields to store the result.
         _status: -1,
         _result: null
       };
+      {
+        // In production, this would just set it on the object.
+        var defaultProps = void 0;
+        var propTypes = void 0;
+        Object.defineProperties(lazyType, {
+          defaultProps: {
+            configurable: true,
+            get: function () {
+              return defaultProps;
+            },
+            set: function (newDefaultProps) {
+              warning$1(false, 'React.lazy(...): It is not supported to assign `defaultProps` to ' + 'a lazy component import. Either specify them where the component ' + 'is defined, or create a wrapping component around it.');
+              defaultProps = newDefaultProps; // Match production behavior more closely:
+
+              Object.defineProperty(lazyType, 'defaultProps', {
+                enumerable: true
+              });
+            }
+          },
+          propTypes: {
+            configurable: true,
+            get: function () {
+              return propTypes;
+            },
+            set: function (newPropTypes) {
+              warning$1(false, 'React.lazy(...): It is not supported to assign `propTypes` to ' + 'a lazy component import. Either specify them where the component ' + 'is defined, or create a wrapping component around it.');
+              propTypes = newPropTypes; // Match production behavior more closely:
+
+              Object.defineProperty(lazyType, 'propTypes', {
+                enumerable: true
+              });
+            }
+          }
+        });
+      }
+      return lazyType;
     }
 
     function forwardRef(render) {
@@ -1763,15 +1792,16 @@ if ("development" !== "production") {
     }
 
     function resolveDispatcher() {
-      var dispatcher = ReactCurrentOwner.currentDispatcher;
-      !(dispatcher !== null) ? invariant(false, 'Hooks can only be called inside the body of a function component.') : void 0;
+      var dispatcher = ReactCurrentDispatcher.current;
+      !(dispatcher !== null) ? invariant(false, 'Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:\n1. You might have mismatching versions of React and the renderer (such as React DOM)\n2. You might be breaking the Rules of Hooks\n3. You might have more than one copy of React in the same app\nSee https://fb.me/react-invalid-hook-call for tips about how to debug and fix this problem.') : void 0;
       return dispatcher;
     }
 
-    function useContext(Context, observedBits) {
+    function useContext(Context, unstable_observedBits) {
       var dispatcher = resolveDispatcher();
       {
-        // TODO: add a more generic warning for invalid values.
+        !(unstable_observedBits === undefined) ? warning$1(false, 'useContext() second argument is reserved for future ' + 'use in React. Passing it is not supported. ' + 'You passed: %s.%s', unstable_observedBits, typeof unstable_observedBits === 'number' && Array.isArray(arguments[2]) ? '\n\nDid you call array.map(useContext)? ' + 'Calling Hooks inside a loop is not supported. ' + 'Learn more at https://fb.me/rules-of-hooks' : '') : void 0; // TODO: add a more generic warning for invalid values.
+
         if (Context._context !== undefined) {
           var realContext = Context._context; // Don't deduplicate because this legitimately causes bugs
           // and nobody should be using this in existing code.
@@ -1783,7 +1813,7 @@ if ("development" !== "production") {
           }
         }
       }
-      return dispatcher.useContext(Context, observedBits);
+      return dispatcher.useContext(Context, unstable_observedBits);
     }
 
     function useState(initialState) {
@@ -1791,9 +1821,9 @@ if ("development" !== "production") {
       return dispatcher.useState(initialState);
     }
 
-    function useReducer(reducer, initialState, initialAction) {
+    function useReducer(reducer, initialArg, init) {
       var dispatcher = resolveDispatcher();
-      return dispatcher.useReducer(reducer, initialState, initialAction);
+      return dispatcher.useReducer(reducer, initialArg, init);
     }
 
     function useRef(initialValue) {
@@ -1804,11 +1834,6 @@ if ("development" !== "production") {
     function useEffect(create, inputs) {
       var dispatcher = resolveDispatcher();
       return dispatcher.useEffect(create, inputs);
-    }
-
-    function useMutationEffect(create, inputs) {
-      var dispatcher = resolveDispatcher();
-      return dispatcher.useMutationEffect(create, inputs);
     }
 
     function useLayoutEffect(create, inputs) {
@@ -1826,9 +1851,16 @@ if ("development" !== "production") {
       return dispatcher.useMemo(create, inputs);
     }
 
-    function useImperativeMethods(ref, create, inputs) {
+    function useImperativeHandle(ref, create, inputs) {
       var dispatcher = resolveDispatcher();
-      return dispatcher.useImperativeMethods(ref, create, inputs);
+      return dispatcher.useImperativeHandle(ref, create, inputs);
+    }
+
+    function useDebugValue(value, formatterFn) {
+      {
+        var dispatcher = resolveDispatcher();
+        return dispatcher.useDebugValue(value, formatterFn);
+      }
     }
     /**
      * ReactElementValidator provides a wrapper around a element factory
@@ -1925,7 +1957,7 @@ if ("development" !== "production") {
 
       setCurrentlyValidatingElement(element);
       {
-        warning$1(false, 'Each child in an array or iterator should have a unique "key" prop.' + '%s%s See https://fb.me/react-warning-keys for more information.', currentComponentErrorInfo, childOwner);
+        warning$1(false, 'Each child in a list should have a unique "key" prop.' + '%s%s See https://fb.me/react-warning-keys for more information.', currentComponentErrorInfo, childOwner);
       }
       setCurrentlyValidatingElement(null);
     }
@@ -1987,17 +2019,19 @@ if ("development" !== "production") {
 
     function validatePropTypes(element) {
       var type = element.type;
-      var name = void 0,
-          propTypes = void 0;
+
+      if (type === null || type === undefined || typeof type === 'string') {
+        return;
+      }
+
+      var name = getComponentName(type);
+      var propTypes = void 0;
 
       if (typeof type === 'function') {
-        // Class or function component
-        name = type.displayName || type.name;
         propTypes = type.propTypes;
-      } else if (typeof type === 'object' && type !== null && type.$$typeof === REACT_FORWARD_REF_TYPE) {
-        // ForwardRef
-        var functionName = type.render.displayName || type.render.name || '';
-        name = type.displayName || (functionName !== '' ? 'ForwardRef(' + functionName + ')' : 'ForwardRef');
+      } else if (typeof type === 'object' && (type.$$typeof === REACT_FORWARD_REF_TYPE || // Note: Memo only checks outer props here.
+      // Inner props are checked in the reconciler.
+      type.$$typeof === REACT_MEMO_TYPE)) {
         propTypes = type.propTypes;
       } else {
         return;
@@ -2132,8 +2166,27 @@ if ("development" !== "production") {
 
       validatePropTypes(newElement);
       return newElement;
-    }
+    } // Helps identify side effects in begin-phase lifecycle hooks and setState reducers:
+    // In some cases, StrictMode should also double-render lifecycles.
+    // This can be confusing for tests though,
+    // And it can be bad for performance in production.
+    // This feature flag can be used to control the behavior:
+    // To preserve the "Pause on caught exceptions" behavior of the debugger, we
+    // replay the begin phase of a failed component inside invokeGuardedCallback.
+    // Warn about deprecated, async-unsafe lifecycles; relates to RFC #6:
+    // Gather advanced timing metrics for Profiler subtrees.
+    // Trace which interactions trigger each commit.
+    // Only used in www builds.
+    // TODO: true? Here it might just be false.
+    // Only used in www builds.
+    // Only used in www builds.
+    // React Fire: prevent the value and checked attributes from syncing
+    // with their related DOM properties
+    // These APIs will no longer be "unstable" in the upcoming 16.7 release,
+    // Control this behavior with a flag to support 16.6 minor releases in the meanwhile.
 
+
+    var enableStableConcurrentModeAPIs = false;
     var React = {
       Children: {
         map: mapChildren,
@@ -2149,6 +2202,16 @@ if ("development" !== "production") {
       forwardRef: forwardRef,
       lazy: lazy,
       memo: memo,
+      useCallback: useCallback,
+      useContext: useContext,
+      useEffect: useEffect,
+      useImperativeHandle: useImperativeHandle,
+      useDebugValue: useDebugValue,
+      useLayoutEffect: useLayoutEffect,
+      useMemo: useMemo,
+      useReducer: useReducer,
+      useRef: useRef,
+      useState: useState,
       Fragment: REACT_FRAGMENT_TYPE,
       StrictMode: REACT_STRICT_MODE_TYPE,
       Suspense: REACT_SUSPENSE_TYPE,
@@ -2157,28 +2220,19 @@ if ("development" !== "production") {
       createFactory: createFactoryWithValidation,
       isValidElement: isValidElement,
       version: ReactVersion,
+      unstable_ConcurrentMode: REACT_CONCURRENT_MODE_TYPE,
+      unstable_Profiler: REACT_PROFILER_TYPE,
       __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: ReactSharedInternals
-    };
+    }; // Note: some APIs are added with feature flags.
+    // Make sure that stable builds for open source
+    // don't modify the React object to avoid deopts.
+    // Also let's not expose their names in stable builds.
 
     if (enableStableConcurrentModeAPIs) {
       React.ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
       React.Profiler = REACT_PROFILER_TYPE;
-    } else {
-      React.unstable_ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
-      React.unstable_Profiler = REACT_PROFILER_TYPE;
-    }
-
-    if (enableHooks) {
-      React.useCallback = useCallback;
-      React.useContext = useContext;
-      React.useEffect = useEffect;
-      React.useImperativeMethods = useImperativeMethods;
-      React.useLayoutEffect = useLayoutEffect;
-      React.useMemo = useMemo;
-      React.useMutationEffect = useMutationEffect;
-      React.useReducer = useReducer;
-      React.useRef = useRef;
-      React.useState = useState;
+      React.unstable_ConcurrentMode = undefined;
+      React.unstable_Profiler = undefined;
     }
 
     var React$2 = Object.freeze({
@@ -29809,12 +29863,14 @@ var ToolTip = function ToolTip(props) {
     className: "tooltip-arrow"
   }), _react.default.createElement("div", {
     className: "tooltip-content"
-  }, props.mode));
+  }, props.text));
 };
 
 var _default = ToolTip;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"Components/ModeButton.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js"}],"assets/home.png":[function(require,module,exports) {
+module.exports = "/home.5b2e3f82.png";
+},{}],"Components/ModeButton.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29828,10 +29884,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var ModeButton = function ModeButton(props) {
   return _react.default.createElement("button", {
-    id: "mode",
+    className: props.name,
     onClick: props.action
   }, _react.default.createElement("img", {
-    id: "mode-img",
+    class: "nav-img",
     src: props.modeImage,
     alt: props.mode
   }));
@@ -29843,6 +29899,8 @@ exports.default = _default;
 module.exports = "/moon.bdc28cbf.png";
 },{}],"assets/sun.png":[function(require,module,exports) {
 module.exports = "/sun.8377c53e.png";
+},{}],"assets/code-window.png":[function(require,module,exports) {
+module.exports = "/code-window.3c9154cc.png";
 },{}],"assets/envelope.png":[function(require,module,exports) {
 module.exports = "/envelope.3604496a.png";
 },{}],"assets/github.png":[function(require,module,exports) {
@@ -29999,11 +30057,15 @@ var _reactRouterDom = require("react-router-dom");
 
 var _ToolTip = _interopRequireDefault(require("./ToolTip"));
 
+var _home = _interopRequireDefault(require("../assets/home.png"));
+
 var _ModeButton = _interopRequireDefault(require("./ModeButton"));
 
 var _moon = _interopRequireDefault(require("../assets/moon.png"));
 
 var _sun = _interopRequireDefault(require("../assets/sun.png"));
+
+var _codeWindow = _interopRequireDefault(require("../assets/code-window.png"));
 
 var _SocialProfiles = _interopRequireDefault(require("./SocialProfiles"));
 
@@ -30068,35 +30130,38 @@ function (_Component) {
   _createClass(Header, [{
     key: "render",
     value: function render() {
-      var style = {
-        display: 'inline-block',
-        clear: 'both',
-        margin: 10,
-        marginBottom: 30
-      };
       var modeImage = this.state.darkMode ? _moon.default : _sun.default;
       var altText = this.state.darkMode ? 'Dark Mode' : 'Light Mode';
-      return _react.default.createElement("div", null, _react.default.createElement("div", {
-        className: "sideIcon"
-      }, _react.default.createElement(_ModeButton.default, {
+      return _react.default.createElement("div", {
+        id: "main"
+      }, _react.default.createElement("nav", {
+        className: "side-bar"
+      }, _react.default.createElement(_reactRouterDom.Link, {
+        className: "link",
+        to: "/"
+      }, _react.default.createElement("img", {
+        className: "nav-img",
+        src: _home.default,
+        alt: "home"
+      })), _react.default.createElement(_ToolTip.default, {
+        text: "Home"
+      }), _react.default.createElement(_reactRouterDom.Link, {
+        className: "link",
+        to: "/projects"
+      }, _react.default.createElement("img", {
+        className: "nav-img",
+        src: _codeWindow.default,
+        alt: "projects"
+      })), _react.default.createElement(_ToolTip.default, {
+        text: "Projects"
+      }), _react.default.createElement(_ModeButton.default, {
+        name: "mode",
         mode: altText,
         action: this.toggleMode,
         modeImage: modeImage
       }), _react.default.createElement(_ToolTip.default, {
-        mode: altText
-      })), _react.default.createElement("div", {
-        className: "sideIcon"
-      }, _react.default.createElement("p", {
-        style: style
-      }, _react.default.createElement(_reactRouterDom.Link, {
-        className: "link",
-        to: "/"
-      }, "Home")), _react.default.createElement("p", {
-        style: style
-      }, _react.default.createElement(_reactRouterDom.Link, {
-        className: "link",
-        to: "/projects"
-      }, "Projects"))), this.props.children, _react.default.createElement(_SocialProfiles.default, {
+        text: altText
+      })), this.props.children, _react.default.createElement(_SocialProfiles.default, {
         mode: this.state.darkMode
       }));
     }
@@ -30106,7 +30171,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = Header;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js","./ToolTip":"Components/ToolTip.js","./ModeButton":"Components/ModeButton.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","./SocialProfiles":"Components/SocialProfiles.js"}],"assets/tri-be_logo-1.png":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js","./ToolTip":"Components/ToolTip.js","../assets/home.png":"assets/home.png","./ModeButton":"Components/ModeButton.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","../assets/code-window.png":"assets/code-window.png","./SocialProfiles":"Components/SocialProfiles.js"}],"assets/tri-be_logo-1.png":[function(require,module,exports) {
 module.exports = "/tri-be_logo-1.7eed02d6.png";
 },{}],"Components/Logo.js":[function(require,module,exports) {
 "use strict";
@@ -30423,7 +30488,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51067" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62426" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

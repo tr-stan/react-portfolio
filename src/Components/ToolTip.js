@@ -4,7 +4,7 @@ const ToolTip = props => {
         return (
             <div className="tooltip">
 				<div className="tooltip-arrow"></div>
-				<div className="tooltip-content">{props.mode}</div>
+				<div className="tooltip-content">{props.text}</div>
 			</div>
         )
 }
