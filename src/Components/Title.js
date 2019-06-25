@@ -37,7 +37,7 @@ class Title extends Component {
     	const { titleIndex, fadeIn } = this.state
         const title = TITLES[titleIndex];
         return (
-            <h1 className={fadeIn ? 'title-fade-in' : 'title-fade-out'}>{title}</h1>
+            <div id="title"><h1 className={fadeIn ? 'title-fade-in' : 'title-fade-out'}>{title}</h1></div>
         )
     }
 }

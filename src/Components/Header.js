@@ -9,7 +9,7 @@ import CodeWindow from '../assets/code-window.png';
 import SocialProfiles from './SocialProfiles';
 
 export default class Header extends Component {
-    state = { darkMode: true, mode: 'Dark Mode' };
+    state = { darkMode: false, mode: 'Light Mode' };
 
     toggleMode = () => {
         this.setState({
