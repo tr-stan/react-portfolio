@@ -7,8 +7,9 @@ const Skills = () => {
 	const misc = SKILLS['misc'].map(SKILL => (<li key={SKILL.id} className={SKILL.category}>{SKILL.name}</li>));
 
 	return (
-		<section id="skills">
+		<section>
 			<h2>Skills</h2>
+			<div id="skills">
 			<div className="skillset">
 				<h3>[...frontend]</h3>
 				<ul>
@@ -26,6 +27,7 @@ const Skills = () => {
 				<ul>
 				{ misc }
 				</ul>
+			</div>
 			</div>
 		</section>
 	)

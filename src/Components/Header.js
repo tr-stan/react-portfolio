@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import ToolTip from './ToolTip';
+import ReactTooltip from 'react-tooltip';
 import Home from '../assets/home.png';
 import ModeButton from './ModeButton';
 import Moon from '../assets/moon.png';
@@ -9,7 +9,11 @@ import CodeWindow from '../assets/code-window.png';
 import SocialProfiles from './SocialProfiles';
 
 export default class Header extends Component {
-    state = { darkMode: false, mode: 'Light Mode' };
+    state = {
+        darkMode: false,
+        mode: 'Light Mode',
+        hover: false
+    };
 
     toggleMode = () => {
         this.setState({
@@ -23,16 +27,21 @@ export default class Header extends Component {
         let altText = this.state.darkMode ? 'Dark Mode' : 'Light Mode';
         return (
             <div id="main">
-                <nav className="side-bar">
-                    <Link className="link" to='/'><img className='nav-img' src={Home} alt='home'/></Link>
-                    <ToolTip text="Home" />
-                    <Link className="link" to='/projects'><img className='nav-img' src={CodeWindow} alt='projects'/></Link>
-                    <ToolTip text="Projects" />
-                    <ModeButton name="mode" mode={altText} action={this.toggleMode} modeImage={modeImage} />
-                    <ToolTip text={altText} />
-                </nav>
+                <div id="sidebar">
+                    <nav>
+                        <Link className="link" to='/'>
+                        <img data-tip="Home" className='nav-img' src={Home} alt='home'/>
+                        </Link>
+                        <Link className="link" to='/projects'>
+                        <img data-tip="Projects" className='nav-img' src={CodeWindow} alt='projects'/>
+                        </Link>
+                        <ModeButton name="mode" mode={altText} action={this.toggleMode} modeImage={modeImage}>
+                        </ModeButton>
+                        <SocialProfiles mode={this.state.darkMode}/>
+                        <ReactTooltip place="right" type="dark" effect="solid"/>
+                    </nav>
+                </div>
                 {this.props.children}
-                <SocialProfiles mode={this.state.darkMode}/>
             </div>
         )
     }

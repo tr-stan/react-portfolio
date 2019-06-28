@@ -54,11 +54,6 @@ const SKILLS = {
             id: 5,
             category: "back-end",
             name: "MongoDB"
-        },
-        {
-            id: 6,
-            category: "back-end",
-            name: "Firebase"
         }
     ],
     "misc": [{
@@ -85,11 +80,6 @@ const SKILLS = {
             id: 5,
             category: "misc",
             name: "Bash"
-        },
-        {
-            id: 6,
-            category: "misc",
-            name: "Heroku"
         }
     ]
 }

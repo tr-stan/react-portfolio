@@ -2,6 +2,7 @@
 
 body {
     margin: 0 auto;
+    width: 100vw;
     text-align: center;
     font-family: 'Roboto Mono', Arial, sans-serif;
     font-size: 20px;
@@ -22,28 +23,41 @@ nav {
     margin-left: 1vw;
     width: 3vw;
     min-height: 180px;
-    margin-bottom: -180px;
 }
 
 p {
     margin: 0 auto;
-    max-width: 70vw;
-    text-align: justify;
+    text-align: center;
     line-height: 1.5rem;
 }
 
-#title {
-	min-height: 160px;
-	display: flex;
-	justify-content: center;
-	align-content: center;
+h2 {
+	height: 100vh;
 }
 
 .primary {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 100vh;
+}
+
+.project {
 	min-height: 100vh;
+}
+
+.project img {
+	padding-top: 4vh;
+	padding-bottom: 4vh;
+}
+
+.nav-img {
+    min-width: 20px;
+    max-width: 40px;
+    width: 3vw;
+    height: auto;
+    margin: 15px auto 0 auto;
+    display: inline-block;
 }
 
 .link {
@@ -57,26 +71,6 @@ p {
 
 .link:active {
     color: rgb(203, 133, 137);
-}
-
-.project {
-    width: 75vw;
-    display: inline-block;
-    vertical-align: top;
-}
-
-.tooltip {
-    top: 6vh;
-    width: 50px;
-    display: inline-block;
-    font-size: 8px;
-}
-
-.nav-img {
-    min-width: 30px;
-    width: 2vw;
-    height: auto;
-    display: inline-block;
 }
 
 .mode {
@@ -108,13 +102,27 @@ p {
     animation-duration: 2s;
 }
 
+#title {
+    min-height: 130px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 1rem;
+}
+
 .skillset {
     display: inline-block;
-    width: 30vw;
+    width: 200px;
 }
 
 .skillset ul {
     list-style-type: none;
+}
+
+#skills {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
 .dark {
@@ -128,6 +136,23 @@ p {
 
 #main {
     position: absolute;
+    display: grid;
+    grid-template-columns: 10vw 89vw;
+    grid-column-gap: 1vw;
+}
+
+#sidebar {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: rgba(120,140,140,0.6);
+}
+
+#app {
+    grid-column: 2 / 3;
+    justify-self: end;
+    padding-left: 4vw;
+    padding-right: 4vw;
+
 }
 
 #logo {
@@ -141,6 +166,14 @@ p {
 
 #zen {
     margin: 20px auto 50px auto;
+}
+
+@media screen and (min-width: 600px) {
+    #main {
+        position: absolute;
+        display: grid;
+        grid-template-columns: 5vw 94vw;
+    }
 }
 
 @keyframes fade-out {
@@ -162,3 +195,4 @@ p {
         opacity: 1
     }
 }
+
