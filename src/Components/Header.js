@@ -5,7 +5,7 @@ import Home from '../assets/home.png';
 import ModeButton from './ModeButton';
 import Moon from '../assets/moon.png';
 import Sun from '../assets/sun.png';
-import CodeWindow from '../assets/code-window.png';
+import CodeWindow from '../assets/coding.png';
 import SocialProfiles from './SocialProfiles';
 
 export default class Header extends Component {

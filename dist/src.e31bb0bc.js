@@ -31703,8 +31703,8 @@ exports.default = _default;
 module.exports = "/moon.bdc28cbf.png";
 },{}],"assets/sun.png":[function(require,module,exports) {
 module.exports = "/sun.8377c53e.png";
-},{}],"assets/code-window.png":[function(require,module,exports) {
-module.exports = "/code-window.3c9154cc.png";
+},{}],"assets/coding.png":[function(require,module,exports) {
+module.exports = "/coding.6d272768.png";
 },{}],"assets/envelope.png":[function(require,module,exports) {
 module.exports = "/envelope.3604496a.png";
 },{}],"assets/github.png":[function(require,module,exports) {
@@ -31734,68 +31734,27 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var SOCIAL_PROFILES = [{
   id: 1,
   link: 'mailto:betriistan@gmail.com',
-  image: _envelope.default
+  image: _envelope.default,
+  text: "connect with me!"
 }, {
   id: 2,
-  link: 'https://github.com/tri-be',
-  image: _github.default
+  link: 'https://www.linkedin.com/in/tristanbennett1',
+  image: _linkedin.default,
+  text: "let's link!"
 }, {
   id: 3,
   link: 'https://www.instagram.com/tri__be/?hl=en',
-  image: _instagram.default
+  image: _instagram.default,
+  text: "ready set pose!"
 }, {
   id: 4,
-  link: 'https://www.linkedin.com/in/tristanbennett1',
-  image: _linkedin.default
+  link: 'https://github.com/tri-be',
+  image: _github.default,
+  text: "check out my code!"
 }];
 var _default = SOCIAL_PROFILES;
 exports.default = _default;
-},{"../assets/envelope.png":"assets/envelope.png","../assets/github.png":"assets/github.png","../assets/instagram.png":"assets/instagram.png","../assets/linkedin.png":"assets/linkedin.png"}],"assets/mail-light-md.png":[function(require,module,exports) {
-module.exports = "/mail-light-md.0d415013.png";
-},{}],"assets/github-light-md.png":[function(require,module,exports) {
-module.exports = "/github-light-md.6fdad683.png";
-},{}],"assets/instagram-light-md.png":[function(require,module,exports) {
-module.exports = "/instagram-light-md.f7101625.png";
-},{}],"assets/linkedin-light-md.png":[function(require,module,exports) {
-module.exports = "/linkedin-light-md.5475bbde.png";
-},{}],"data/socialProfilesLight.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _mailLightMd = _interopRequireDefault(require("../assets/mail-light-md.png"));
-
-var _githubLightMd = _interopRequireDefault(require("../assets/github-light-md.png"));
-
-var _instagramLightMd = _interopRequireDefault(require("../assets/instagram-light-md.png"));
-
-var _linkedinLightMd = _interopRequireDefault(require("../assets/linkedin-light-md.png"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var SOCIAL_PROFILES_LIGHT = [{
-  id: 1,
-  link: 'mailto:betriistan@gmail.com',
-  image: _mailLightMd.default
-}, {
-  id: 2,
-  link: 'https://github.com/tri-be',
-  image: _githubLightMd.default
-}, {
-  id: 3,
-  link: 'https://www.instagram.com/tri__be/?hl=en',
-  image: _instagramLightMd.default
-}, {
-  id: 4,
-  link: 'https://www.linkedin.com/in/tristanbennett1',
-  image: _linkedinLightMd.default
-}];
-var _default = SOCIAL_PROFILES_LIGHT;
-exports.default = _default;
-},{"../assets/mail-light-md.png":"assets/mail-light-md.png","../assets/github-light-md.png":"assets/github-light-md.png","../assets/instagram-light-md.png":"assets/instagram-light-md.png","../assets/linkedin-light-md.png":"assets/linkedin-light-md.png"}],"Components/SocialProfiles.js":[function(require,module,exports) {
+},{"../assets/envelope.png":"assets/envelope.png","../assets/github.png":"assets/github.png","../assets/instagram.png":"assets/instagram.png","../assets/linkedin.png":"assets/linkedin.png"}],"Components/SocialProfiles.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31806,8 +31765,6 @@ exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
 
 var _socialProfiles = _interopRequireDefault(require("../data/socialProfiles"));
-
-var _socialProfilesLight = _interopRequireDefault(require("../data/socialProfilesLight"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31831,8 +31788,7 @@ var SocialProfile = function SocialProfile(props) {
 };
 
 var SocialProfiles = function SocialProfiles(props) {
-  var profiles = props.mode ? _socialProfiles.default : _socialProfilesLight.default;
-  return _react.default.createElement("div", null, profiles.map(function (SOCIAL_PROFILE) {
+  return _react.default.createElement("div", null, _socialProfiles.default.map(function (SOCIAL_PROFILE) {
     return _react.default.createElement(SocialProfile, {
       key: SOCIAL_PROFILE.id,
       socialProfile: SOCIAL_PROFILE
@@ -31842,7 +31798,7 @@ var SocialProfiles = function SocialProfiles(props) {
 
 var _default = SocialProfiles;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../data/socialProfiles":"data/socialProfiles.js","../data/socialProfilesLight":"data/socialProfilesLight.js"}],"Components/Header.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../data/socialProfiles":"data/socialProfiles.js"}],"Components/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31864,7 +31820,7 @@ var _moon = _interopRequireDefault(require("../assets/moon.png"));
 
 var _sun = _interopRequireDefault(require("../assets/sun.png"));
 
-var _codeWindow = _interopRequireDefault(require("../assets/code-window.png"));
+var _coding = _interopRequireDefault(require("../assets/coding.png"));
 
 var _SocialProfiles = _interopRequireDefault(require("./SocialProfiles"));
 
@@ -31950,7 +31906,7 @@ function (_Component) {
       }, _react.default.createElement("img", {
         "data-tip": "Projects",
         className: "nav-img",
-        src: _codeWindow.default,
+        src: _coding.default,
         alt: "projects"
       })), _react.default.createElement(_ModeButton.default, {
         name: "mode",
@@ -31971,7 +31927,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = Header;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js","react-tooltip":"../node_modules/react-tooltip/dist/index.js","../assets/home.png":"assets/home.png","./ModeButton":"Components/ModeButton.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","../assets/code-window.png":"assets/code-window.png","./SocialProfiles":"Components/SocialProfiles.js"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js","react-tooltip":"../node_modules/react-tooltip/dist/index.js","../assets/home.png":"assets/home.png","./ModeButton":"Components/ModeButton.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","../assets/coding.png":"assets/coding.png","./SocialProfiles":"Components/SocialProfiles.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -32032,7 +31988,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51144" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54192" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

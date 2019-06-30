@@ -6,7 +6,7 @@ body {
     text-align: center;
     font-family: 'Roboto Mono', Arial, sans-serif;
     font-size: 20px;
-    background-color: rgb(238, 233, 229);
+    background-color: rgb(240, 240, 240);
     color: rgb(49, 54, 56);
 }
 
@@ -29,6 +29,10 @@ p {
     margin: 0 auto;
     text-align: center;
     line-height: 1.5rem;
+}
+
+h2 {
+	height: 50vh;
 }
 
 .primary {
@@ -123,7 +127,7 @@ p {
 
 .dark {
     background-color: rgb(49, 54, 56);
-    color: rgb(200, 194, 204);
+    color: rgb(240, 240, 240);
 }
 
 .dark .link {
@@ -140,14 +144,14 @@ p {
 #sidebar {
     grid-column-start: 1;
     grid-column-end: 2;
-    background-color: rgba(120,140,140,0.6);
+    background-color: rgb(129, 156, 139);
 }
 
 #app {
     grid-column: 2 / 3;
     justify-self: end;
-    padding-left: 4vw;
-    padding-right: 4vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
 
 }
 
