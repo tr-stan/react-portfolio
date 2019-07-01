@@ -12,33 +12,32 @@ body {
 
 img {
     margin: 0 auto;
-    width: 70vw;
+    max-width: 75vw;
 }
 
 nav {
     position: sticky;
     display: flex;
     flex-direction: column;
-    top: 50px;
-    margin-left: 1vw;
-    width: 3vw;
+    align-items: center;
+    top: 15px;
     min-height: 180px;
 }
 
 p {
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     line-height: 1.5rem;
 }
 
 h2 {
-	height: 50vh;
+	padding: 10vh 2vw;
 }
 
 .primary {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     min-height: 100vh;
 }
 
@@ -79,7 +78,7 @@ h2 {
     width: 3vw;
     height: auto;
     padding: 0;
-    background-color: rgba(200, 194, 204, 0);
+    background-color: rgb(93, 105, 100);
     color: rgb(49, 54, 56);
     border: none;
 }
@@ -105,7 +104,7 @@ h2 {
 }
 
 #title {
-    min-height: 50vmin;
+    min-height: 45vmin;
     font-size: 6vmin;
     padding: 1vh 1vw;
     display: flex;
@@ -140,31 +139,36 @@ h2 {
 #main {
     position: absolute;
     display: grid;
-    grid-template-columns: 10vw 89vw;
-    grid-column-gap: 1vw;
+    grid-template-columns: 14vw 83vw;
+    column-gap: 3vw;
 }
 
 #sidebar {
+    display: flex;
+    flex-direction: column;
     grid-column-start: 1;
     grid-column-end: 2;
-    background-color: rgb(129, 156, 139);
+    background-color: rgb(93, 105, 100);
+    align-items: center;
 }
 
 #app {
     grid-column: 2 / 3;
     justify-self: end;
-    padding-left: 10vw;
-    padding-right: 10vw;
-
 }
 
 #logo {
-    max-height: 45vh;
-    max-width: 75vw;
+    max-width: 14vw;
     height: auto;
     width: auto;
     display: inline-block;
-    border-radius: 220px;
+    margin-bottom: 2vh;
+    margin-left: 10px;
+    padding: 3vh 2vw;
+    background-color: rgb(49, 54, 56);
+    overflow: hidden;
+    border: 3px solid rgb(93, 105, 100);
+
 }
 
 #zen {
@@ -172,10 +176,19 @@ h2 {
 }
 
 @media screen and (min-width: 600px) {
+    img {
+        max-width: 82vw;
+    }
     #main {
         position: absolute;
         display: grid;
-        grid-template-columns: 5vw 94vw;
+        grid-template-columns: 7vw 91vw;
+        column-gap: 2vw;
+    }
+
+    #logo {
+        max-width: 6.5vw;
+        padding: 3vh 1vw;
     }
 }
 

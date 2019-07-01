@@ -14,8 +14,8 @@ const Project = props => {
 		)
 }
 
-const Projects = () => (
-	<section>
+const Projects = props => (
+	<section style={props.style}>
 		<h2>Highlighted Projects</h2>
 		
 		{

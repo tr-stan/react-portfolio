@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
 import Home from '../assets/home.png';
+import Logo from './Logo';
 import ModeButton from './ModeButton';
 import Moon from '../assets/moon.png';
 import Sun from '../assets/sun.png';
@@ -27,8 +28,9 @@ export default class Header extends Component {
         let altText = this.state.darkMode ? 'Dark Mode' : 'Light Mode';
         return (
             <div id="main">
-                <div id="sidebar">
+                <section id="sidebar">
                     <nav>
+                    <Logo />
                         <Link className="link" to='/'>
                         <img data-tip="Home" className='nav-img' src={Home} alt='home'/>
                         </Link>
@@ -40,7 +42,7 @@ export default class Header extends Component {
                         <SocialProfiles mode={this.state.darkMode}/>
                         <ReactTooltip place="right" type="dark" effect="solid"/>
                     </nav>
-                </div>
+                </section>
                 {this.props.children}
             </div>
         )

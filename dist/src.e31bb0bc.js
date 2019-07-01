@@ -29581,8 +29581,10 @@ var Project = function Project(props) {
   })), _react.default.createElement("p", null, description));
 };
 
-var Projects = function Projects() {
-  return _react.default.createElement("section", null, _react.default.createElement("h2", null, "Highlighted Projects"), _projects.default.map(function (PROJECT) {
+var Projects = function Projects(props) {
+  return _react.default.createElement("section", {
+    style: props.style
+  }, _react.default.createElement("h2", null, "Highlighted Projects"), _projects.default.map(function (PROJECT) {
     return _react.default.createElement(Project, {
       key: PROJECT.id,
       project: PROJECT
@@ -29838,7 +29840,34 @@ function (_Component) {
 
 var _default = Title;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"Components/Zen.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js"}],"assets/light_logo.png":[function(require,module,exports) {
+module.exports = "/light_logo.41e818ee.png";
+},{}],"Components/Logo.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _light_logo = _interopRequireDefault(require("../assets/light_logo.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Logo = function Logo() {
+  return _react.default.createElement("img", {
+    id: "logo",
+    className: "nav-img",
+    alt: "profile",
+    src: _light_logo.default
+  });
+};
+
+var _default = Logo;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","../assets/light_logo.png":"assets/light_logo.png"}],"Components/Zen.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30014,6 +30043,8 @@ var _Skills = _interopRequireDefault(require("./Skills"));
 
 var _Title = _interopRequireDefault(require("./Title"));
 
+var _Logo = _interopRequireDefault(require("./Logo"));
+
 var _Zen = _interopRequireDefault(require("./Zen"));
 
 require("../index.css");
@@ -30054,11 +30085,16 @@ function (_Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", {
-        id: "app"
+      return _react.default.createElement("section", {
+        id: "app",
+        style: this.props.style
       }, _react.default.createElement("div", {
         className: "primary"
-      }, _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "I'm tr;be, a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! I live in sunny Austin, TX."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!")), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_Zen.default, null));
+      }, _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "I'm tr;be, a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! I live in sunny Austin, TX."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!")), _react.default.createElement(_Projects.default, {
+        className: "primary"
+      }), _react.default.createElement(_Skills.default, {
+        className: "primary"
+      }), _react.default.createElement(_Zen.default, null));
     }
   }]);
 
@@ -30066,7 +30102,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"../node_modules/react/index.js","./Projects":"Components/Projects.js","./Skills":"Components/Skills.js","./Title":"Components/Title.js","./Zen":"Components/Zen.js","../index.css":"index.css"}],"../node_modules/classnames/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./Projects":"Components/Projects.js","./Skills":"Components/Skills.js","./Title":"Components/Title.js","./Logo":"Components/Logo.js","./Zen":"Components/Zen.js","../index.css":"index.css"}],"../node_modules/classnames/index.js":[function(require,module,exports) {
 var define;
 /*!
   Copyright (c) 2017 Jed Watson.
@@ -31691,7 +31727,7 @@ var ModeButton = function ModeButton(props) {
     onClick: props.action
   }, _react.default.createElement("img", {
     "data-tip": props.mode,
-    class: "nav-img",
+    className: "nav-img",
     src: props.modeImage,
     alt: props.mode
   }));
@@ -31814,6 +31850,8 @@ var _reactTooltip = _interopRequireDefault(require("react-tooltip"));
 
 var _home = _interopRequireDefault(require("../assets/home.png"));
 
+var _Logo = _interopRequireDefault(require("./Logo"));
+
 var _ModeButton = _interopRequireDefault(require("./ModeButton"));
 
 var _moon = _interopRequireDefault(require("../assets/moon.png"));
@@ -31890,9 +31928,9 @@ function (_Component) {
       var altText = this.state.darkMode ? 'Dark Mode' : 'Light Mode';
       return _react.default.createElement("div", {
         id: "main"
-      }, _react.default.createElement("div", {
+      }, _react.default.createElement("section", {
         id: "sidebar"
-      }, _react.default.createElement("nav", null, _react.default.createElement(_reactRouterDom.Link, {
+      }, _react.default.createElement("nav", null, _react.default.createElement(_Logo.default, null), _react.default.createElement(_reactRouterDom.Link, {
         className: "link",
         to: "/"
       }, _react.default.createElement("img", {
@@ -31927,7 +31965,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = Header;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js","react-tooltip":"../node_modules/react-tooltip/dist/index.js","../assets/home.png":"assets/home.png","./ModeButton":"Components/ModeButton.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","../assets/coding.png":"assets/coding.png","./SocialProfiles":"Components/SocialProfiles.js"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js","react-tooltip":"../node_modules/react-tooltip/dist/index.js","../assets/home.png":"assets/home.png","./Logo":"Components/Logo.js","./ModeButton":"Components/ModeButton.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","../assets/coding.png":"assets/coding.png","./SocialProfiles":"Components/SocialProfiles.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -31946,18 +31984,26 @@ var _Header = _interopRequireDefault(require("./Components/Header"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var styles = {
+  padding: '4vh 4vw'
+};
+
 _reactDom.default.render(_react.default.createElement(_reactRouterDom.Router, {
   history: (0, _createBrowserHistory.default)()
 }, _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Route, {
   exact: true,
   path: "/",
   render: function render() {
-    return _react.default.createElement(_Header.default, null, _react.default.createElement(_App.default, null));
+    return _react.default.createElement(_Header.default, null, _react.default.createElement(_App.default, {
+      style: styles
+    }));
   }
 }), _react.default.createElement(_reactRouterDom.Route, {
   path: "/projects",
   render: function render() {
-    return _react.default.createElement(_Header.default, null, _react.default.createElement(_Projects.default, null));
+    return _react.default.createElement(_Header.default, null, _react.default.createElement(_Projects.default, {
+      style: styles
+    }));
   }
 }))), document.getElementById('root'));
 },{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js","history/createBrowserHistory":"../node_modules/history/createBrowserHistory.js","./Components/App":"Components/App.js","./Components/Projects":"Components/Projects.js","./Components/Header":"Components/Header.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -31988,7 +32034,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54899" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56925" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
