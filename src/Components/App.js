@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactTooltip from 'react-tooltip';
 import Projects from './Projects';
 import Skills from './Skills';
 import Title from './Title';
@@ -11,14 +12,16 @@ export default class App extends Component {
 
     render() {
         return (
-            <section id="app" style={this.props.style}>
+            <section className="main" style={this.props.style}>
                 <div className="primary">
 				<Title />
-				<p>I'm tr;be, a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! I live in sunny Austin, TX.</p>
+				<p>I'm <span data-tip="from tr-istan be-nnett" data-for="top">tr;be</span>,</p> 
+                <p>a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! Currently living in sunny Austin, TX.</p>
 				<p>My forte is the MERN stack, but I enjoy Python, Vue, and SQL!</p>
+                <ReactTooltip id="top" place="top" />
                 </div>
-				<Projects className="primary" />
-                <Skills className="primary" />
+				<Projects />
+                <Skills />
 				<Zen />
 			</section>
         )

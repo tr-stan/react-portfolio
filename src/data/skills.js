@@ -17,15 +17,10 @@ const SKILLS = {
         {
             id: 4,
             category: "front-end",
-            name: "Vue"
-        },
-        {
-            id: 5,
-            category: "front-end",
             name: "HTML / 5"
         },
         {
-            id: 6,
+            id: 5,
             category: "front-end",
             name: "CSS / 3"
         }

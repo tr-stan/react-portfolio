@@ -18,8 +18,15 @@ export default class Zen extends Component {
 	}
 
 	render() {
+		let notes = "This quote was pulled from Github's 'Zen' API, which can be found at api.github.com/zen"
+		let styles = {
+			margin: '20px',
+			padding: '10px 5px', 
+			borderRadius: '50%',
+			border: '1px solid rgb(240, 240, 240)',
+		}
 		return (
-			<div id="zen">"{this.state.zenSaying || "Design for failure."}" - GitHub</div>
+			<div id="zen"><p>"{this.state.zenSaying || "Design for failure."}" - GitHub</p><span data-tip={notes} style={styles} >º¡º</span></div>
 		)
 	}
 }

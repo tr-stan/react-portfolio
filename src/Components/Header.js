@@ -27,7 +27,7 @@ export default class Header extends Component {
         let modeImage = this.state.darkMode ? Moon : Sun;
         let altText = this.state.darkMode ? 'Dark Mode' : 'Light Mode';
         return (
-            <div id="main">
+            <div id="app">
                 <section id="sidebar">
                     <nav>
                     <Logo />

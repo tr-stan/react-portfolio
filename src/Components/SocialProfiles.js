@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import SOCIAL_PROFILES from '../data/socialProfiles'
 
 const SocialProfile = props => {
-    const { id, link, image } = props.socialProfile
+    const { id, link, image, text } = props.socialProfile
     return (
-    	<a href={link} style={{display: 'block'}}><img className='nav-img' src={image} alt={`social profile ${id}`}/></a>
+    	<a href={link} style={{display: 'block'}}><img data-tip={text} className='nav-img' src={image} alt={`social profile ${id}`}/></a>
     )
 }
 

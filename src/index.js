@@ -14,7 +14,7 @@ ReactDOM.render(
 	<Router history={createBrowserHistory()}>
 		<Switch>
 			<Route exact path='/' render={() => <Header><App style={styles}/></Header>} />
-			<Route path='/projects' render={() => <Header><Projects style={styles} /></Header>} />
+			<Route path='/projects' render={() => <Header><Projects className='main' style={styles} /></Header>} />
 		</Switch>
 	</Router>,
 	document.getElementById('root'));

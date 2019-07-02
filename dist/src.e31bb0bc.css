@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0 auto;
     width: 100vw;
@@ -34,6 +38,10 @@ h2 {
 	padding: 10vh 2vw;
 }
 
+span:hover {
+    cursor: pointer;
+}
+
 .primary {
     display: flex;
     flex-direction: column;
@@ -41,8 +49,23 @@ h2 {
     min-height: 100vh;
 }
 
+.section-heading {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(93, 105, 100);
+    text-shadow: -2px 0 rgb(240, 240, 240);
+}
+
+.section-heading h2 {
+    font-size: 1.8rem;
+}
+
 .project {
 	min-height: 100vh;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }
 
 .project img {
@@ -125,6 +148,7 @@ h2 {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
+    min-height: 100vh;
 }
 
 .dark {
@@ -136,10 +160,10 @@ h2 {
     color: rgb(153, 178, 221);
 }
 
-#main {
+#app {
     position: absolute;
     display: grid;
-    grid-template-columns: 14vw 83vw;
+    grid-template-columns: 14vw 40vw 40vw;
     column-gap: 3vw;
 }
 
@@ -152,8 +176,9 @@ h2 {
     align-items: center;
 }
 
-#app {
-    grid-column: 2 / 3;
+.main {
+    grid-column-start: 2;
+    grid-column-end: 4;
     justify-self: end;
 }
 
@@ -166,28 +191,41 @@ h2 {
     margin-left: 10px;
     padding: 3vh 2vw;
     background-color: rgb(49, 54, 56);
-    overflow: hidden;
     border: 3px solid rgb(93, 105, 100);
 
 }
 
 #zen {
-    margin: 20px auto 50px auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media screen and (min-width: 600px) {
     img {
         max-width: 82vw;
     }
-    #main {
+
+    .project img {
+        padding-top: 4vh;
+        padding-bottom: 4vh;
+        max-width: 45vw;
+    }
+
+    .section-heading h2 {
+        font-size: 3rem;
+    }
+
+    #app {
         position: absolute;
         display: grid;
-        grid-template-columns: 7vw 91vw;
+        grid-template-columns: 6vw 45vw 45vw;
         column-gap: 2vw;
     }
 
     #logo {
-        max-width: 6.5vw;
+        max-width: 6vw;
         padding: 3vh 1vw;
     }
 }
