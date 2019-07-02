@@ -40,7 +40,7 @@ export default class Header extends Component {
                         <ModeButton name="mode" mode={altText} action={this.toggleMode} modeImage={modeImage}>
                         </ModeButton>
                         <SocialProfiles mode={this.state.darkMode}/>
-                        <ReactTooltip place="right" type="dark" effect="solid"/>
+                        <ReactTooltip place="right" type="dark" delayShow={500} effect="solid"/>
                     </nav>
                 </section>
                 {this.props.children}

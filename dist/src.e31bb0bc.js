@@ -31322,13 +31322,13 @@ var Skills = function Skills() {
     className: "section-heading"
   }, _react.default.createElement("h2", null, "Skills")), _react.default.createElement("div", {
     id: "skills"
-  }, _react.default.createElement("div", {
+  }, _react.default.createElement("ul", {
     className: "skillset"
-  }, _react.default.createElement("h3", null, "[...frontend]"), _react.default.createElement("ul", null, frontend)), _react.default.createElement("div", {
+  }, frontend), _react.default.createElement("ul", {
     className: "skillset"
-  }, _react.default.createElement("h3", null, "[...backend]"), _react.default.createElement("ul", null, backend)), _react.default.createElement("div", {
+  }, backend), _react.default.createElement("ul", {
     className: "skillset"
-  }, _react.default.createElement("h3", null, "[...rest]"), _react.default.createElement("ul", null, misc))));
+  }, misc)));
 };
 
 var _default = Skills;
@@ -31555,19 +31555,21 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var notes = "This quote was pulled from Github's 'Zen' API, which can be found at api.github.com/zen";
+      var notes = "This quote was converted from a readable stream from Github's 'Zen' API, which can be found at api.github.com/zen :)";
       var styles = {
-        margin: '20px',
-        padding: '10px 5px',
+        verticalAlign: 'super',
+        fontSize: '8px',
+        margin: '0 2px',
+        padding: '1px 3px',
         borderRadius: '50%',
         border: '1px solid rgb(240, 240, 240)'
       };
       return _react.default.createElement("div", {
         id: "zen"
-      }, _react.default.createElement("p", null, "\"", this.state.zenSaying || "Design for failure.", "\" - GitHub"), _react.default.createElement("span", {
+      }, _react.default.createElement("p", null, "\"", this.state.zenSaying || "Design for failure.", "\" ", _react.default.createElement("span", {
         "data-tip": notes,
         style: styles
-      }, "\xBA\xA1\xBA"));
+      }, "!")), _react.default.createElement("p", null, "- GitHub"));
     }
   }]);
 
@@ -31710,15 +31712,9 @@ function (_Component) {
       return _react.default.createElement("section", {
         className: "main",
         style: this.props.style
-      }, _react.default.createElement("div", {
+      }, _react.default.createElement(_Title.default, null), _react.default.createElement("div", {
         className: "primary"
-      }, _react.default.createElement(_Title.default, null), _react.default.createElement("p", null, "I'm ", _react.default.createElement("span", {
-        "data-tip": "from tr-istan be-nnett",
-        "data-for": "top"
-      }, "tr;be"), ","), _react.default.createElement("p", null, "a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! Currently living in sunny Austin, TX."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!"), _react.default.createElement(_reactTooltip.default, {
-        id: "top",
-        place: "top"
-      })), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_Zen.default, null));
+      }, _react.default.createElement("p", null, "I'm tr;stan, a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! Currently living in sunny Austin, TX."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!")), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_Zen.default, null));
     }
   }]);
 
@@ -31977,6 +31973,7 @@ function (_Component) {
       }), _react.default.createElement(_reactTooltip.default, {
         place: "right",
         type: "dark",
+        delayShow: 500,
         effect: "solid"
       }))), this.props.children);
     }
@@ -32056,7 +32053,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60959" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61961" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

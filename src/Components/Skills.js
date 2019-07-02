@@ -12,24 +12,15 @@ const Skills = () => {
 				<h2>Skills</h2>
 			</div>
 			<div id="skills">
-				<div className="skillset">
-					<h3>[...frontend]</h3>
-					<ul>
+					<ul className="skillset">
 					{frontend}
 					</ul>
-				</div>
-				<div className="skillset">
-					<h3>[...backend]</h3>
-					<ul>
+					<ul className="skillset">
 					{ backend }
 					</ul>
-				</div>
-				<div className="skillset">
-					<h3>[...rest]</h3>
-					<ul>
+					<ul className="skillset">
 					{ misc }
 					</ul>
-				</div>
 			</div>
 		</section>
 	)
