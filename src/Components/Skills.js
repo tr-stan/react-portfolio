@@ -12,13 +12,13 @@ const Skills = () => {
 				<h2>Skills</h2>
 			</div>
 			<div id="skills">
-					<ul className="skillset">
+					<ul>
 					{frontend}
 					</ul>
-					<ul className="skillset">
+					<ul>
 					{ backend }
 					</ul>
-					<ul className="skillset">
+					<ul>
 					{ misc }
 					</ul>
 			</div>

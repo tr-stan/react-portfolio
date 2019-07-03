@@ -37,10 +37,9 @@ export default class Header extends Component {
                         <Link className="link" to='/projects'>
                         <img data-tip="Projects" className='nav-img' src={CodeWindow} alt='projects'/>
                         </Link>
-                        <ModeButton name="mode" mode={altText} action={this.toggleMode} modeImage={modeImage}>
-                        </ModeButton>
+                        <ModeButton name="mode" mode={altText} action={this.toggleMode} modeImage={modeImage} />
                         <SocialProfiles mode={this.state.darkMode}/>
-                        <ReactTooltip place="right" type="dark" delayShow={500} effect="solid"/>
+                        <ReactTooltip place="right" delayShow={500} effect="solid"/>
                     </nav>
                 </section>
                 {this.props.children}

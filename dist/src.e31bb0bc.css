@@ -3,6 +3,7 @@
 
 
 body {
+    box-sizing: border-box;
     margin: 0 auto;
     width: 100vw;
     text-align: center;
@@ -19,6 +20,7 @@ img {
 
 nav {
     position: sticky;
+    position: -webkit-sticky;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,11 +35,15 @@ p {
 }
 
 h2 {
-    padding: 10vh 2vw;
+    font-size: 2rem;
 }
 
-span:hover {
-    cursor: pointer;
+ul {
+    display: inline-block;
+    width: 200px;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .nav-img {
@@ -49,16 +55,16 @@ span:hover {
     display: inline-block;
 }
 
-.link {
+.link, a {
     text-decoration: none;
     color: rgb(126, 168, 190);
 }
 
-.link:visited {
+.link:visited, a:visited {
     color: rgb(120, 113, 170);
 }
 
-.link:active {
+.link:active, a:active {
     color: rgb(203, 133, 137);
 }
 
@@ -67,8 +73,8 @@ span:hover {
     color: rgb(240, 240, 240);
 }
 
-.dark .link {
-    color: rgb(153, 178, 221);
+.dark .link, .dark a {
+    color: rgb(118, 148, 167);
 }
 
 .mode {
@@ -107,14 +113,8 @@ span:hover {
     scroll-snap-align: start;
 }
 
-.section-heading h2 {
-    font-size: 1.8rem;
-}
-
 .project {
     min-height: 100vh;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
     scroll-snap-align: start;
 }
 
@@ -141,22 +141,14 @@ span:hover {
     display: flex;
     vertical-align: center;
     justify-content: center;
-    align-content: center;
     align-items:  center;
-}
-
-.skillset {
-    display: inline-block;
-    width: 200px;
-    list-style-type: none;
-    margin: 0 auto;
-    padding: 20px;
 }
 
 #skills {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-content: center;
     min-height: 100vh;
 }
 
@@ -205,8 +197,7 @@ span:hover {
     align-items: center;
 }
 #zen p {
-    font-size: 6vmin;
-    padding: 10px;
+    font-size: 2rem;
 }
 
 #skills-section {
@@ -223,23 +214,20 @@ span:hover {
     }
 
     .project div {
-        display: grid;
-        grid-template-columns: 50% 50%;
+        display: flex;
     }
 
     .project div img {
         padding-top: 4vh;
         padding-bottom: 4vh;
         max-width: 40vw;
-        grid-column-start: 1;
     }
 
     .project div p {
-        padding-top: 4vh;
-        padding-bottom: 4vh;
+        padding: 4vh 4vw;
         grid-column-start: 2;
-        display: flex;
         justify-content: center;
+        align-self: center;
     }
 
     .section-heading h2 {

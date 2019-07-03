@@ -11,6 +11,9 @@
 # production
 /build
 
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+
 # misc
 .DS_Store
 .env.local
