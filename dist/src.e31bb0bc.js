@@ -30960,7 +30960,7 @@ function (_Component) {
     value: function render() {
       return _react.default.createElement("div", {
         id: "zen"
-      }, _react.default.createElement("p", null, "\"", this.state.zenSaying || "Design for failure.", "\""), _react.default.createElement("p", null, _react.default.createElement("a", {
+      }, _react.default.createElement("p", null, "\"", this.state.zenSaying || 'Design for failure.', "\""), _react.default.createElement("p", null, _react.default.createElement("a", {
         href: "https://api.github.com/zen"
       }, "-GitHub")));
     }
@@ -31107,7 +31107,7 @@ function (_Component) {
         style: this.props.style
       }, _react.default.createElement(_Title.default, null), _react.default.createElement("div", {
         className: "primary"
-      }, _react.default.createElement("p", null, "I'm tr;stan, a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! Currently living in sunny Austin, TX."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!")), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_Zen.default, null));
+      }, _react.default.createElement("p", null, "I'm tr;stan (aka tr;be)"), _react.default.createElement("p", null, "a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! Currently living in sunny Austin, TX."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!")), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_Zen.default, null));
     }
   }]);
 
@@ -31395,7 +31395,7 @@ var _Header = _interopRequireDefault(require("./Components/Header"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = {
-  padding: '4vh 4vw'
+  padding: '0 4vw'
 };
 
 _reactDom.default.render(_react.default.createElement(_reactRouterDom.Router, {
@@ -31445,7 +31445,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56055" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57868" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

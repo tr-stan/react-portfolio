@@ -19,7 +19,7 @@ export default class Zen extends Component {
 
 	render() {
 		return (
-			<div id="zen"><p>"{this.state.zenSaying || "Design for failure."}"</p><p><a href="https://api.github.com/zen">-GitHub</a></p></div>
+			<div id="zen"><p>"{this.state.zenSaying || 'Design for failure.'}"</p><p><a href="https://api.github.com/zen">-GitHub</a></p></div>
 		)
 	}
 }

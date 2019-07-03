@@ -21,6 +21,9 @@ img {
 nav {
     position: sticky;
     position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,10 +42,10 @@ h2 {
 }
 
 ul {
-    display: inline-block;
-    width: 200px;
     list-style-type: none;
+    display: inline-block;
     margin: 0 auto;
+    width: 200px;
     padding: 20px;
 }
 
@@ -55,16 +58,19 @@ ul {
     display: inline-block;
 }
 
-.link, a {
+.link,
+a {
     text-decoration: none;
     color: rgb(126, 168, 190);
 }
 
-.link:visited, a:visited {
+.link:visited,
+a:visited {
     color: rgb(120, 113, 170);
 }
 
-.link:active, a:active {
+.link:active,
+a:active {
     color: rgb(203, 133, 137);
 }
 
@@ -73,7 +79,8 @@ ul {
     color: rgb(240, 240, 240);
 }
 
-.dark .link, .dark a {
+.dark .link,
+.dark a {
     color: rgb(118, 148, 167);
 }
 
@@ -108,8 +115,8 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(93, 105, 100);
-    text-shadow: -2px 0 rgb(240, 240, 240);
+    color: rgb(129, 156, 139);
+    text-shadow: -4px -2px rgb(49, 54, 56);
     scroll-snap-align: start;
 }
 
@@ -136,12 +143,12 @@ ul {
 }
 
 #title {
-    min-height: 100vh;
-    font-size: 10vmin;
+    height: 100vh;
+    font-size: 2rem;
     display: flex;
     vertical-align: center;
     justify-content: center;
-    align-items:  center;
+    align-items: center;
 }
 
 #skills {
@@ -196,8 +203,10 @@ ul {
     justify-content: center;
     align-items: center;
 }
+
 #zen p {
     font-size: 2rem;
+    line-height: 3rem;
 }
 
 #skills-section {
@@ -244,6 +253,10 @@ ul {
     #logo {
         max-width: 6vw;
         padding: 3vh 1vw;
+    }
+
+    #title {
+        font-size: 3rem;
     }
 }
 

@@ -7,7 +7,7 @@ import Projects from './Components/Projects';
 import Header from './Components/Header';
 
 let styles = {
-	padding: '4vh 4vw'
+	padding: '0 4vw'
 };
 
 ReactDOM.render(

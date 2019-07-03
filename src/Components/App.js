@@ -15,7 +15,8 @@ export default class App extends Component {
             <section className="main" style={this.props.style}>
 				<Title />
                 <div className="primary">
-                <p>I'm tr;stan, a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! Currently living in sunny Austin, TX.</p>
+                <p>I'm tr;stan (aka tr;be)</p>
+                <p>a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! Currently living in sunny Austin, TX.</p>
 				<p>My forte is the MERN stack, but I enjoy Python, Vue, and SQL!</p>
                 </div>
 				<Projects />
