@@ -18,13 +18,13 @@ const SOCIAL_PROFILES = [
 	},
 	{
 		id: 3,
-		link: 'https://www.instagram.com/tri__be/?hl=en',
+		link: 'https://www.instagram.com/tr_.stan/?hl=en',
 		image: instagram,
 		text: "Ready, set, pose!"
 	},
 	{
 		id: 4,
-		link: 'https://github.com/tri-be',
+		link: 'https://github.com/tr-stan',
 		image: github,
 		text: "Check out my code!"
 	}

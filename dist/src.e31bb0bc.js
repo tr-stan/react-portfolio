@@ -30562,7 +30562,7 @@ var PROJECTS = [{
 }];
 var _default = PROJECTS;
 exports.default = _default;
-},{"../assets/spectrofy-4.png":"assets/spectrofy-4.png","../assets/mazer-lazer.png":"assets/mazer-lazer.png","../assets/local-weather.png":"assets/local-weather.png","../assets/all-greek.png":"assets/all-greek.png"}],"Components/Projects.js":[function(require,module,exports) {
+},{"../assets/spectrofy-4.png":"assets/spectrofy-4.png","../assets/mazer-lazer.png":"assets/mazer-lazer.png","../assets/local-weather.png":"assets/local-weather.png","../assets/all-greek.png":"assets/all-greek.png"}],"components/Projects.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30687,7 +30687,7 @@ var SKILLS = {
 };
 var _default = SKILLS;
 exports.default = _default;
-},{}],"Components/Skills.js":[function(require,module,exports) {
+},{}],"components/Skills.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30736,7 +30736,7 @@ var Skills = function Skills() {
 
 var _default = Skills;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../data/skills":"data/skills.js"}],"Components/Title.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../data/skills":"data/skills.js"}],"components/Title.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30855,7 +30855,7 @@ var _default = Title;
 exports.default = _default;
 },{"react":"../node_modules/react/index.js"}],"assets/light_logo.png":[function(require,module,exports) {
 module.exports = "/light_logo.41e818ee.png";
-},{}],"Components/Logo.js":[function(require,module,exports) {
+},{}],"components/Logo.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30880,7 +30880,7 @@ var Logo = function Logo() {
 
 var _default = Logo;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../assets/light_logo.png":"assets/light_logo.png"}],"Components/Zen.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../assets/light_logo.png":"assets/light_logo.png"}],"components/Zen.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31042,7 +31042,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"Components/App.js":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31107,7 +31107,7 @@ function (_Component) {
         style: this.props.style
       }, _react.default.createElement(_Title.default, null), _react.default.createElement("div", {
         className: "primary"
-      }, _react.default.createElement("p", null, "I'm tr;stan (aka tr;be)"), _react.default.createElement("p", null, "a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new! Currently living in sunny Austin, TX."), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!")), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_Zen.default, null));
+      }, _react.default.createElement("p", null, "I'm tr;stan"), _react.default.createElement("p", null, "a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new!"), _react.default.createElement("p", null, "My forte is the MERN stack, but I enjoy Python, Vue, and SQL!")), _react.default.createElement(_Projects.default, null), _react.default.createElement(_Skills.default, null), _react.default.createElement(_Zen.default, null));
     }
   }]);
 
@@ -31115,9 +31115,9 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"../node_modules/react/index.js","react-tooltip":"../node_modules/react-tooltip/dist/index.js","./Projects":"Components/Projects.js","./Skills":"Components/Skills.js","./Title":"Components/Title.js","./Logo":"Components/Logo.js","./Zen":"Components/Zen.js","../index.css":"index.css"}],"assets/home.png":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-tooltip":"../node_modules/react-tooltip/dist/index.js","./Projects":"components/Projects.js","./Skills":"components/Skills.js","./Title":"components/Title.js","./Logo":"components/Logo.js","./Zen":"components/Zen.js","../index.css":"index.css"}],"assets/home.png":[function(require,module,exports) {
 module.exports = "/home.5b2e3f82.png";
-},{}],"Components/ModeButton.js":[function(require,module,exports) {
+},{}],"components/ModeButton.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31187,18 +31187,18 @@ var SOCIAL_PROFILES = [{
   text: "Let's link!"
 }, {
   id: 3,
-  link: 'https://www.instagram.com/tri__be/?hl=en',
+  link: 'https://www.instagram.com/tr_.stan/?hl=en',
   image: _instagram.default,
   text: "Ready, set, pose!"
 }, {
   id: 4,
-  link: 'https://github.com/tri-be',
+  link: 'https://github.com/tr-stan',
   image: _github.default,
   text: "Check out my code!"
 }];
 var _default = SOCIAL_PROFILES;
 exports.default = _default;
-},{"../assets/envelope.png":"assets/envelope.png","../assets/github.png":"assets/github.png","../assets/instagram.png":"assets/instagram.png","../assets/linkedin.png":"assets/linkedin.png"}],"Components/SocialProfiles.js":[function(require,module,exports) {
+},{"../assets/envelope.png":"assets/envelope.png","../assets/github.png":"assets/github.png","../assets/instagram.png":"assets/instagram.png","../assets/linkedin.png":"assets/linkedin.png"}],"components/SocialProfiles.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31244,7 +31244,7 @@ var SocialProfiles = function SocialProfiles(props) {
 
 var _default = SocialProfiles;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../data/socialProfiles":"data/socialProfiles.js"}],"Components/Header.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../data/socialProfiles":"data/socialProfiles.js"}],"components/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31375,7 +31375,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = Header;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js","react-tooltip":"../node_modules/react-tooltip/dist/index.js","../assets/home.png":"assets/home.png","./Logo":"Components/Logo.js","./ModeButton":"Components/ModeButton.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","../assets/coding.png":"assets/coding.png","./SocialProfiles":"Components/SocialProfiles.js"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js","react-tooltip":"../node_modules/react-tooltip/dist/index.js","../assets/home.png":"assets/home.png","./Logo":"components/Logo.js","./ModeButton":"components/ModeButton.js","../assets/moon.png":"assets/moon.png","../assets/sun.png":"assets/sun.png","../assets/coding.png":"assets/coding.png","./SocialProfiles":"components/SocialProfiles.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -31386,11 +31386,11 @@ var _reactRouterDom = require("react-router-dom");
 
 var _history = require("history");
 
-var _App = _interopRequireDefault(require("./Components/App"));
+var _App = _interopRequireDefault(require("./components/App"));
 
-var _Projects = _interopRequireDefault(require("./Components/Projects"));
+var _Projects = _interopRequireDefault(require("./components/Projects"));
 
-var _Header = _interopRequireDefault(require("./Components/Header"));
+var _Header = _interopRequireDefault(require("./components/Header"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31417,7 +31417,7 @@ _reactDom.default.render(_react.default.createElement(_reactRouterDom.Router, {
     }));
   }
 }))), document.getElementById('root'));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js","history":"../node_modules/history/es/index.js","./Components/App":"Components/App.js","./Components/Projects":"Components/Projects.js","./Components/Header":"Components/Header.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-router-dom":"../node_modules/react-router-dom/es/index.js","history":"../node_modules/history/es/index.js","./components/App":"components/App.js","./components/Projects":"components/Projects.js","./components/Header":"components/Header.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -31445,7 +31445,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57868" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61319" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Switch, Route } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-import App from './Components/App';
-import Projects from './Components/Projects';
-import Header from './Components/Header';
+import App from './components/App';
+import Projects from './components/Projects';
+import Header from './components/Header';
 
 let styles = {
 	padding: '0 4vw'
