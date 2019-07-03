@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import PROJECTS from '../data/projects'
+import React from 'react';
+import PROJECTS from '../data/projects';
 
 const Project = props => {
     const { title, image, description, link, id } = props.project
