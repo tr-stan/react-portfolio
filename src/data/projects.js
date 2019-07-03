@@ -9,7 +9,7 @@ const PROJECTS = [
 		id: 1,
 		title: "Spectrofy",
 		description: "A fullstack application that allows users to fetch track audio analysis data from Spotify's Web API and see it whimiscally visualized.",
-		link: "https://spectrofy.herokuapp.com",
+		link: "https://spectrofy.netlify.com/",
 		image: spectrofy
 	},
 	{
