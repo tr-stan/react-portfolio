@@ -184,13 +184,13 @@ a:active {
 }
 
 #logo {
-    max-width: 14vw;
+    max-width: 17vw;
     height: auto;
     width: auto;
     display: inline-block;
     margin-bottom: 2vh;
-    margin-left: 10px;
-    padding: 3vh 2vw;
+    margin-left: 15px;
+    padding: 3vh 1vw;
     background-color: rgb(49, 54, 56);
     border: 3px solid rgb(93, 105, 100);
 
@@ -251,8 +251,9 @@ a:active {
     }
 
     #logo {
-        max-width: 6vw;
+        max-width: 7vw;
         padding: 3vh 1vw;
+        margin-left: 2vw;
     }
 
     #title {

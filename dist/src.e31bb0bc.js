@@ -30539,7 +30539,7 @@ var PROJECTS = [{
   id: 1,
   title: "Spectrofy",
   description: "A fullstack application that allows users to fetch track audio analysis data from Spotify's Web API and see it whimiscally visualized.",
-  link: "https://spectrofy.herokuapp.com",
+  link: "https://spectrofy.netlify.com/",
   image: _spectrofy.default
 }, {
   id: 2,
@@ -30570,13 +30570,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _projects = _interopRequireDefault(require("../data/projects"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 var Project = function Project(props) {
   var _props$project = props.project,
@@ -30853,8 +30851,8 @@ function (_Component) {
 
 var _default = Title;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"assets/light_logo.png":[function(require,module,exports) {
-module.exports = "/light_logo.41e818ee.png";
+},{"react":"../node_modules/react/index.js"}],"assets/logo-green.png":[function(require,module,exports) {
+module.exports = "/logo-green.6a8d6410.png";
 },{}],"components/Logo.js":[function(require,module,exports) {
 "use strict";
 
@@ -30865,22 +30863,21 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _light_logo = _interopRequireDefault(require("../assets/light_logo.png"));
+var _logoGreen = _interopRequireDefault(require("../assets/logo-green.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Logo = function Logo() {
   return _react.default.createElement("img", {
     id: "logo",
-    className: "nav-img",
     alt: "profile",
-    src: _light_logo.default
+    src: _logoGreen.default
   });
 };
 
 var _default = Logo;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../assets/light_logo.png":"assets/light_logo.png"}],"components/Zen.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../assets/logo-green.png":"assets/logo-green.png"}],"components/Zen.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31445,7 +31442,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50117" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52178" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
