@@ -16,8 +16,7 @@ export default class App extends Component {
 				<Title />
                 <div className="primary">
                 <p>I'm tr;stan</p>
-                <p>a multicultural full stack software developer, polyglot, and ideator, always ready to learn something new!</p>
-				<p>My forte is the MERN stack, but I enjoy Python, Vue, and SQL!</p>
+                <p>a multicultural software developer, polyglot, and ideator, always ready to learn something new! My forte is creating apps with Dart and Flutter, but I am also versed in React-centric web development and the Firebase suite of cloud services.</p>
                 </div>
 				<Projects />
                 <Skills />

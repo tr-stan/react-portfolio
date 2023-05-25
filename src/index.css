@@ -106,8 +106,8 @@ a:active {
 .primary {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    min-height: 100vh;
+    justify-content: center;
+    min-height: 50vh;
 }
 
 .section-heading {
