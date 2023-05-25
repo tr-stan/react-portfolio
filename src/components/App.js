@@ -15,8 +15,7 @@ export default class App extends Component {
             <section className="main" style={this.props.style}>
 				<Title />
                 <div className="primary">
-                <p>I'm tr;stan</p>
-                <p>a multicultural software developer, polyglot, and ideator, always ready to learn something new! My forte is creating apps with Dart and Flutter, but I am also versed in React-centric web development and the Firebase suite of cloud services.</p>
+                <p>I'm tr;stan, a multicultural software developer, polyglot, and ideator, always ready to learn something new! My forte is creating apps with Dart and Flutter, but I am also versed in React-centric web development and the Firebase suite of cloud services.</p>
                 </div>
 				<Projects />
                 <Skills />
