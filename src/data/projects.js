@@ -9,7 +9,13 @@ const PROJECTS = [
 	{
 		id: 1,
 		title: "Wordbud",
-		description: "An adaptive language-learning app built with Flutter that provides personlized English learning for Chinese speakers.",
+		description: ```An cross-platform mobile app built with Flutter 
+		that provides personlized English learning for Chinese speakers. 
+		Due to an NDA I am not able to show the github for this application, 
+		and it is still in the beta stages, 
+		so I have shared a screenshot of one section of the app. 
+		I plan on adding detail pages for each project so I can add screenshots and 
+		more details on how I used Flutter to build features in the app during my years at Wordbud.```,
 		link: "https://www.wordbud.com/",
 		image: wordbud
 	},
