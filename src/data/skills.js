@@ -2,27 +2,27 @@ const SKILLS = {
     "frontend": [{
             id: 1,
             category: "front-end",
-            name: "ES6"
+            name: "Flutter"
         },
         {
             id: 2,
             category: "front-end",
-            name: "React"
+            name: "Dart"
         },
         {
             id: 3,
             category: "front-end",
-            name: "jQuery"
+            name: "React"
         },
         {
             id: 4,
             category: "front-end",
-            name: "HTML / 5"
+            name: "HTML"
         },
         {
             id: 5,
             category: "front-end",
-            name: "CSS / 3"
+            name: "CSS"
         }
     ],
     "backend": [{
@@ -33,22 +33,22 @@ const SKILLS = {
         {
             id: 2,
             category: "back-end",
-            name: "Express"
+            name: "Firebase Auth"
         },
         {
             id: 3,
             category: "back-end",
-            name: "Python"
+            name: "Firebase Cloud Functions"
         },
         {
             id: 4,
             category: "back-end",
-            name: "Postgre SQL"
+            name: "Isar DB"
         },
         {
             id: 5,
             category: "back-end",
-            name: "MongoDB"
+            name: "Hive DB"
         }
     ],
     "misc": [{
